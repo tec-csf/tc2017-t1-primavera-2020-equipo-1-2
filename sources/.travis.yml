@@ -1,0 +1,7 @@
+install: 
+    make get-deps
+language: 
+    C++
+compiler: 
+    g++ 
+    clang

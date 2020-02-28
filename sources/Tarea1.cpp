@@ -11,24 +11,45 @@
 
 using namespace std;
 
+void AnalisisOracion(string oraciones)
+{
+    char cOraciones[oraciones.size() + 1];
+    cout << oraciones << endl; 
+}
+
 int main()
 {
-    fstream archivoPrueba;
-    string nombreArchivo, demo;
-
-    cout << "A continuación ingrese el nombre del documento\nDebe de tener la terminación .txt" << endl;
-
+    fstream inputFile;
+    string nombreArchivo, outputFile;
+    string oraciones;
+    
+    cout << "Ingresa el nombre del documento a continuación:" << endl;
     cin >> nombreArchivo;
-
     cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n" << endl;
+    
+    cout << "Como quiere que se llame el documento?\nNo se le olvide añadir la terminación .txt" << endl;
+    cin >> outputFile;
 
-    archivoPrueba.open(nombreArchivo.c_str());
+    ofstream newFile;
 
-    while (archivoPrueba >> demo)
+    newFile.open(outputFile);
+
+    inputFile.open(nombreArchivo.c_str());
+
+    if(inputFile.is_open()){
+        
+        while (getline(inputFile, oraciones))
+        {
+            AnalisisOracion(oraciones);
+        }
+        
+    }else
     {
-        cout << demo << endl;
+        cout << "File not found!" << endl;
     }
     
+    
+    inputFile.close();
 
     return 0;
 }
