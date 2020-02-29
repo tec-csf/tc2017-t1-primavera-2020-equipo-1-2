@@ -7,44 +7,41 @@
 #include <iostream>
 #include <stdio.h>
 #include <fstream>
-#include <bits/stdc++.h>
 #include <vector>
 
 using namespace std;
 
 void AnalisisOracion(string oraciones)
 {
-    char cOraciones[oraciones.size() + 1];  //cOraciones = oraciones en char
-    //cout << oraciones << endl; 
+    char cOraciones[oraciones.size() + 1]; //cOraciones = oraciones en char
+    cout << oraciones << endl;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
-    fstream inputFile;
-    string nombreArchivo, oraciones;
-    
-    cout << "Ingresa el nombre del documento a continuación:";
-    cin >> nombreArchivo;           
-    cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n" << endl;
+    fstream inputFile;                  //file to read
+    string nombreArchivo, oraciones;    //strings meant to initialize the document and it's content
+
+    nombreArchivo = argv[2];
+
+    cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n"    //clarifies the document that's been inserted
+         << endl;
 
     inputFile.open(nombreArchivo.c_str());
-    int i = 0;
 
-    if(inputFile.is_open()){
-        
+    if (inputFile.is_open())
+    {
+
         while (getline(inputFile, oraciones))
         {
             AnalisisOracion(oraciones);
-            i++;
-            cout << i << endl;
         }
-        
-    }else
-    {
-        cout << "File not found!" << endl;
     }
-    
-    
+    else
+    {
+        cout << "No existe el documento" << endl;
+    }
+
     inputFile.close();
 
     return 0;
