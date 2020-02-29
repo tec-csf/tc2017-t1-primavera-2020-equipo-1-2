@@ -8,26 +8,24 @@
 #include <stdio.h>
 #include <fstream>
 #include <bits/stdc++.h>
+#include <vector>
 
 using namespace std;
 
 void AnalisisOracion(string oraciones)
 {
-    char cOraciones[oraciones.size() + 1];
-    cout << oraciones << endl; 
+    char cOraciones[oraciones.size() + 1];  //cOraciones = oraciones en char
+    //cout << oraciones << endl; 
 }
 
 int main()
 {
     fstream inputFile;
-    string nombreArchivo, outputFile;
-    string oraciones;
+    string nombreArchivo, oraciones;
     
-    cout << "Ingresa el nombre del documento a continuación:" << endl;
+    cout << "Ingresa el nombre del documento a continuación:";
     cin >> nombreArchivo;           
     cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n" << endl;
-
-    ofstream newFile;
 
     inputFile.open(nombreArchivo.c_str());
 
