@@ -30,6 +30,11 @@ void PrintTable(queue<T> lineasComp)
 
 int main(int argc, char const *argv[])
 {
+    string op[]={"+","-","++","--","=","[]"};
+    vector<string>vectorOP(op,op + sizeof(op)/sizeof(*op));
+    string func[]={"for","if","while"};
+    vector<string>vectorFN(func,func + sizeof(func)/sizeof(*func));
+
     queue<string> lineasComp;
     fstream inputFile;                  //file to read
     string nombreArchivo, oraciones;    //strings meant to initialize the document and it's content
