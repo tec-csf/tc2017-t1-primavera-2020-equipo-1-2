@@ -12,10 +12,9 @@
 
 using namespace std;
 
-void AnalisisOracion(string oraciones)
+void PrintTable(stack<string> lineasComp)
 {
-    char cOraciones[oraciones.size() + 1]; //cOraciones = oraciones en char
-    cout << oraciones << endl;
+    cout << lineasComp.size()<<endl;
 }
 
 int main(int argc, char const *argv[])
@@ -36,10 +35,11 @@ int main(int argc, char const *argv[])
 
         while (getline(inputFile, oraciones))
         {
-            AnalisisOracion(oraciones);
+            //AnalisisOracion(oraciones);
             lineasComp.push(oraciones);
+            PrintTable(lineasComp);
         }
-        cout<<lineasComp.size()<<endl;
+        //cout<<lineasComp.size()<<endl;
     }
     else
     {
