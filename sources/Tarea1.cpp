@@ -30,12 +30,15 @@ int main()
     ofstream newFile;
 
     inputFile.open(nombreArchivo.c_str());
+    int i = 0;
 
     if(inputFile.is_open()){
         
         while (getline(inputFile, oraciones))
         {
             AnalisisOracion(oraciones);
+            i++;
+            cout << i << endl;
         }
         
     }else
