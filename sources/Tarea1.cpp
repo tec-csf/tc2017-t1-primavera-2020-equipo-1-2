@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
         while (getline(inputFile, oraciones))
         {
             AnalisisOracion(oraciones);
-            lineasComp.push(oraciones);
+            lineasComp.push(oraciones); // once the line is adding it to a stack
         }
         cout<<lineasComp.size()<<endl;
     }
