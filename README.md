@@ -7,7 +7,7 @@
 2. *Katia Yareth Bellido López* - *A01023638* - *Campus Santa Fe*
 3. *Constanza Gómez Sánchez* - *A01026717* - *Campus Santa Fe*
 4. *Christopher Luis Miranda Vanegas* - *A01022676* - *Campus Santa Fe*
-5. *[Poner aquí Nombre y Apellidos del integrante 5]* - *[Poner aquí su Matrícula]* - *[Poner aquí su campus]*
+5. *Miguel Monterrubio Bandera* - *A01022153* - *Campus Santa Fe*
 
 ---
 ## 1. Aspectos generales
