@@ -35,9 +35,14 @@ int main(int argc, char const *argv[])
 
         while (getline(inputFile, oraciones))
         {
+<<<<<<< HEAD
             //AnalisisOracion(oraciones);
             lineasComp.push(oraciones);
             PrintTable(lineasComp);
+=======
+            AnalisisOracion(oraciones);
+            lineasComp.push(oraciones); // once the line is adding it to a stack
+>>>>>>> 088d000d47b6e0ea7ffec9de6955f11d2729bd82
         }
         //cout<<lineasComp.size()<<endl;
     }
