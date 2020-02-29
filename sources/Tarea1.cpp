@@ -24,15 +24,10 @@ int main()
     string oraciones;
     
     cout << "Ingresa el nombre del documento a continuación:" << endl;
-    cin >> nombreArchivo;
+    cin >> nombreArchivo;           
     cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n" << endl;
-    
-    cout << "Como quiere que se llame el documento?\nNo se le olvide añadir la terminación .txt" << endl;
-    cin >> outputFile;
 
     ofstream newFile;
-
-    newFile.open(outputFile);
 
     inputFile.open(nombreArchivo.c_str());
 
