@@ -8,18 +8,28 @@
 #include <stdio.h>
 #include <fstream>
 #include <vector>
-#include <stack>
+#include <queue>
 
 using namespace std;
 
-void PrintTable(stack<string> lineasComp)
+void PrintTable(queue<string> lineasComp)
 {
-    cout << lineasComp.size()<<endl;
+    int cont = lineasComp.size();
+
+    cout << "No. de linea\t | \t\t\t\t\t\t\tCódigo\t\t\t\t\t\t\t\t | OE\t | Polinomio\t |" << endl;
+    cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+
+    for (int i = 1; i <= cont; i++)
+    {
+        cout << i << "            \t |" << lineasComp.front() <<endl;
+        lineasComp.pop();
+    }
+    
 }
 
 int main(int argc, char const *argv[])
 {
-    stack<string> lineasComp;
+    queue<string> lineasComp;
     fstream inputFile;                  //file to read
     string nombreArchivo, oraciones;    //strings meant to initialize the document and it's content
 
@@ -35,15 +45,9 @@ int main(int argc, char const *argv[])
 
         while (getline(inputFile, oraciones))
         {
-<<<<<<< HEAD
-            //AnalisisOracion(oraciones);
-            lineasComp.push(oraciones);
-            PrintTable(lineasComp);
-=======
-            AnalisisOracion(oraciones);
-            lineasComp.push(oraciones); // once the line is adding it to a stack
->>>>>>> 088d000d47b6e0ea7ffec9de6955f11d2729bd82
+            lineasComp.push(oraciones); // once the line is adding it to a queue
         }
+            PrintTable(lineasComp);
         //cout<<lineasComp.size()<<endl;
     }
     else
