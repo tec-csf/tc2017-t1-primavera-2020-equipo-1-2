@@ -12,7 +12,8 @@
 
 using namespace std;
 
-void PrintTable(queue<string> lineasComp)
+template <class T>
+void PrintTable(queue<T> lineasComp)
 {
     int cont = lineasComp.size();
 
