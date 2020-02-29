@@ -15,16 +15,21 @@ using namespace std;
 void AnalisisOracion(string oraciones)
 {
     char cOraciones[oraciones.size() + 1];  //cOraciones = oraciones en char
-    //cout << oraciones << endl; 
+    cout << oraciones << endl; 
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     fstream inputFile;
     string nombreArchivo, oraciones;
     
-    cout << "Ingresa el nombre del documento a continuación:";
-    cin >> nombreArchivo;           
+    if (argv == 0)
+    {
+        printf("No se insertó un valor después del '-i'\n");
+    }
+    
+    nombreArchivo = argv[2]; 
+     
     cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n" << endl;
 
     inputFile.open(nombreArchivo.c_str());
