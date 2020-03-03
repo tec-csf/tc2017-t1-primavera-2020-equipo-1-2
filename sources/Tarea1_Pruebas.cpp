@@ -40,15 +40,15 @@ void analisisPrueba(queue<string> lineasComp){
                 cont1++;
             }
         }
+        //PrintTable(lineasComp, cont1);
         lineasComp.pop();
     }
     cout << cont1 << endl;
 
-    PrintTable(cont1);
 
 }
 
-void PrintTable(queue<string> lineasComp, int cont1)
+void PrintTable(queue<string> lineasComp/*, queue<T> contF*/)
 {
     int cont = lineasComp.size();
 
