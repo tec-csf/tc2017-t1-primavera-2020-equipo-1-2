@@ -12,6 +12,7 @@
 
 using namespace std;
 template <class T>
+// documentacion
 
 void PrintTable(queue<T> lineasComp)
 {
