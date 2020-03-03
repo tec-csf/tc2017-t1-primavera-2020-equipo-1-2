@@ -13,6 +13,8 @@
 using namespace std;
 template <class T>
 
+/*Prueba*/
+
 void PrintTable(queue<T> lineasComp)
 {
     int cont = lineasComp.size();
