@@ -26,19 +26,16 @@ int main(){
     lineasComp.push("}");
 
     int cont = lineasComp.size();
+    //bool found = false;
 
-    for(int i=0; i < 2; i++){
+    for(int i=0; i < cont; i++){
         string analize = lineasComp.front();
-        cout << "Fuera del primer for" << endl;
         for(int i=0; i < vectorFN.size(); i++){
-            cout << "Dentro del for" << endl;
-            bool found = analize.find(vectorFN.at(i));
-            cout << "Fuera del if" << endl;
-            if(found != false){
-                cout << "yay";
+            int found = analize.find(vectorFN.at(i));
+            if(found >= 0){
+                cout << vectorFN.at(i);
                 cout << endl;
             }
-            cout << "Después del if" << endl;
         }
         lineasComp.pop();
     }
