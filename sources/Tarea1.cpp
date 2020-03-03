@@ -12,6 +12,9 @@
 
 using namespace std;
 template <class T>
+// documentacion
+
+/*Prueba*/
 
 void PrintTable(queue<T> lineasComp)
 {

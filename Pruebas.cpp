@@ -7,10 +7,12 @@
 using namespace std;
 
 int main(){
-    string op[]={"+","-","++","--","=","[]"};
+    string op[]={"+","-","++","--","=","[", "]", "<", ">", ">=", "<=", "+=", "-="};
     vector<string>vectorOP(op,op + sizeof(op)/sizeof(*op));
-    string func[]={"for","if","while"};
-    vector<string>vectorFN(func,func + sizeof(func)/sizeof(*func));
+    string funcFor[]={"for","while"};
+    vector<string>vectorFNF(funcFor,func + sizeof(func)/sizeof(*func));
+    string funcIf[]={"if"};
+    vector<string>vectorFNI()
 
     queue<string> lineasComp;
     lineasComp.push("void oddEvenSort(int* a, int n){");
@@ -26,13 +28,14 @@ int main(){
     lineasComp.push("}");
 
     int cont = lineasComp.size();
-    //bool found = false;
+    vector <string> oes;
 
     for(int i=0; i < cont; i++){
         string analize = lineasComp.front();
         for(int i=0; i < vectorFN.size(); i++){
             int found = analize.find(vectorFN.at(i));
-            if(found >= 0){
+            if(found >= 0){ //si es mayor a 0 esta en la línea
+                oes.push_back("n");
                 cout << vectorFN.at(i);
                 cout << endl;
             }
