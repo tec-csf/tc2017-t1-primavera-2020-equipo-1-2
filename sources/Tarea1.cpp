@@ -11,8 +11,8 @@
 #include <queue>
 
 using namespace std;
-
 template <class T>
+
 void PrintTable(queue<T> lineasComp)
 {
     int cont = lineasComp.size();
