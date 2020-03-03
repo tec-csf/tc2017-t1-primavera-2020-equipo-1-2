@@ -25,7 +25,9 @@ void PrintTable(queue<T> lineasComp)
         cout << i << "            \t |" << lineasComp.front() <<endl;
         lineasComp.pop();
     }
-    
+
+    cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+
 }
 
 int main(int argc, char const *argv[])
