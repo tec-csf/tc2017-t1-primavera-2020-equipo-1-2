@@ -14,6 +14,8 @@ using namespace std;
 template <class T>
 // documentacion
 
+/*Prueba*/
+
 void PrintTable(queue<T> lineasComp)
 {
     int cont = lineasComp.size();
@@ -26,7 +28,9 @@ void PrintTable(queue<T> lineasComp)
         cout << i << "            \t |" << lineasComp.front() <<endl;
         lineasComp.pop();
     }
-    
+
+    cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+
 }
 
 int main(int argc, char const *argv[])
