@@ -7,15 +7,15 @@
 using namespace std;
 
 int main(){
-    string op[]={"+","-","++","--","=","[", "]", "<", ">", ">=", "<=", "+=", "-="};
+    string op[]={"+","-","=","[", "<", ">"};
     vector<string>vectorOP(op,op + sizeof(op)/sizeof(*op));
     string funcFor[]={"for","while"};
-    vector<string>vectorFNF(funcFor,func + sizeof(func)/sizeof(*func));
+    vector<string>vectorFN(funcFor,funcFor + sizeof(funcFor)/sizeof(*funcFor));
     string funcIf[]={"if"};
-    vector<string>vectorFNI()
+    vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));
 
     queue<string> lineasComp;
-    lineasComp.push("void oddEvenSort(int* a, int n){");
+    /*lineasComp.push("void oddEvenSort(int* a, int n){");
     lineasComp.push("for(int i=(n-1); i>=0; i--){");
     lineasComp.push("for(int j=(n-1); j>0; j--){");
     lineasComp.push("if(a[j]<a[j-1]){");
@@ -25,21 +25,39 @@ int main(){
     lineasComp.push("}");
     lineasComp.push("}");
     lineasComp.push("}");
-    lineasComp.push("}");
+    lineasComp.push("}");*/
+    lineasComp.push("int x= 1+2");
 
     int cont = lineasComp.size();
+    int cont1 = 0;
     vector <string> oes;
 
     for(int i=0; i < cont; i++){
         string analize = lineasComp.front();
-        for(int i=0; i < vectorFN.size(); i++){
+        for(int i=0; i<vectorOP.size(); i++){
+            int found = analize.find(vectorOP.at(i));
+            if(found >= 0){
+                cont1++;
+            }
+            cout << cont1;
+            cout << endl;
+        }
+
+
+        /*for(int i=0; i < vectorFN.size(); i++){
             int found = analize.find(vectorFN.at(i));
-            if(found >= 0){ //si es mayor a 0 esta en la línea
-                oes.push_back("n");
+            if(found >= 0){ //si es mayor a 0 está en la línea
+                oes.push_back(vectorFN.at(i));
+                for(int i=0; i < vectorOP.size(); i++){
+                    int found = analize.find(vectorOP.at(i));
+                    if(found >= 0){
+
+                    }
+                }
                 cout << vectorFN.at(i);
                 cout << endl;
             }
-        }
+        }*/
         lineasComp.pop();
     }
 
