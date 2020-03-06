@@ -35,9 +35,7 @@ void analisisPrueba(queue<string> lineasComp){
     string op[] = {"+", "-", "=", "[", " < ", " > ", " * " , " / "};
     vector<string> vectorOP(op, op + sizeof(op) / sizeof(*op));                   
     string funcFor[] = {"for", "while"};
-    vector<string> vectorFN(funcFor, funcFor + sizeof(funcFor) / sizeof(*funcFor));
     string funcIf[] = {"if"};
-    vector<string> vectorFUN(funcIf, funcIf + sizeof(funcIf) / sizeof(*funcIf));
     queue<int> contadorOE;
 
     vector<string> vecComp; // se almacena los valores de la cola
@@ -91,9 +89,7 @@ void PrintTable(vector<string> vecComp, vector<int> contOE)
 int main(int argc, char const *argv[])
 {
     string op[] = {"+", "-", "++", "--", "=", "[]"};
-    vector<string> vectorOP(op, op + sizeof(op) / sizeof(*op));
     string func[] = {"for", "if", "while"};
-    vector<string> vectorFN(func, func + sizeof(func) / sizeof(*func));
 
     queue<string> lineasComp;
     fstream inputFile;               //file to read
