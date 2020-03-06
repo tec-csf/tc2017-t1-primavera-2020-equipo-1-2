@@ -23,17 +23,8 @@ void impresionMetodos(vector<int> contOE){
 
     int count = contOE.size();
 
-    //cout << "Impresión de vectores" << endl;
-
-    cout << count<< "\t";
-    cout << contOE[count-1] << endl;
-    /*for (int i = 0; i < count; i++)
-    {
-        cout << contOE[i] << endl;
-    }*/
-    
-    
-
+    cout << count<< "\t"; 
+    cout << contOE[count-1] << endl; //imprime last en el vector
 
 }
 
@@ -48,18 +39,17 @@ void analisisPrueba(queue<string> lineasComp){
     vector<string> vectorFUN(funcIf, funcIf + sizeof(funcIf) / sizeof(*funcIf));
     queue<int> contadorOE;
 
-    vector<string> vecComp;
-    vector<int> contOE;
+    vector<string> vecComp; // se almacena los valores de la cola
+    vector<int> contOE;//usado para almacenar Operaciones Elementales
 
-    int cont = lineasComp.size();
-    int cont1, contOrden = 0;
-    vector<string> oes;
+    int cont = lineasComp.size(); 
+    int cont1 = 0;
 
-    for (int i = 0; i < cont; i++)
+    for (int i = 0; i < cont; i++) //recorre por todas las filas
     {
         cont1 = 0;
         string analize = lineasComp.front();
-        for (int i = 0; i < vectorOP.size(); i++)
+        for (int i = 0; i < vectorOP.size(); i++) //recorre y compara las operaciones
         {
             int found = analize.find(vectorOP.at(i));
             if (found >= 0)
@@ -72,8 +62,8 @@ void analisisPrueba(queue<string> lineasComp){
     
         contOE.push_back(cont1);
         
-        vecComp.push_back(lineasComp.front());
-        lineasComp.pop();
+        vecComp.push_back(lineasComp.front()); //usado para insertar los valores de la cola en el vector
+        lineasComp.pop(); //saca los valores de la cola, COMO POR??? :D 
     }
 
 
@@ -81,7 +71,7 @@ void analisisPrueba(queue<string> lineasComp){
     //cout << vecComp << endl;
 
 }
-/*
+
 void PrintTable(vector<string> lineasComp, vector<int> contadorOE)
 {
     int cont = lineasComp.size();
@@ -100,7 +90,7 @@ void PrintTable(vector<string> lineasComp, vector<int> contadorOE)
 
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 }
-*/
+
 int main(int argc, char const *argv[])
 {
     string op[] = {"+", "-", "++", "--", "=", "[]"};
@@ -129,7 +119,7 @@ int main(int argc, char const *argv[])
         }
         
         //analisisPrueba(lineasComp);
-        //PrintTable(lineasComp);
+        PrintTable(lineasComp);
         //cout<<lineasComp.size()<<endl;
     }
     else
