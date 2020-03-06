@@ -25,13 +25,12 @@ void impresionMetodos(vector<int> contOE){
 
     //cout << "Impresión de vectores" << endl;
 
-    cout << count << endl;
-
-    
-    for (int i = 0; i < count; i++)
+    cout << count<< "\t";
+    cout << contOE[count-1] << endl;
+    /*for (int i = 0; i < count; i++)
     {
         cout << contOE[i] << endl;
-    }
+    }*/
     
     
 
@@ -126,9 +125,10 @@ int main(int argc, char const *argv[])
         while (getline(inputFile, oraciones))
         {
             lineasComp.push(oraciones); // once the line is adding it to a queue
+            analisisPrueba(lineasComp);
         }
         
-        analisisPrueba(lineasComp);
+        //analisisPrueba(lineasComp);
         //PrintTable(lineasComp);
         //cout<<lineasComp.size()<<endl;
     }
