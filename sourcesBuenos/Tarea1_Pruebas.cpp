@@ -32,7 +32,7 @@ void impresionMetodos(vector<int> contOE){
 /*Prueba*/
 void analisisPrueba(queue<string> lineasComp){
 
-    string op[] = {"+", "-", "=", "[", " < ", " > ", " * " , " / "};
+    string op[] = {"+", "-", "=", "[", " < ", " > ", " * " , " / ","cout","return"};
     vector<string> vectorOP(op, op + sizeof(op) / sizeof(*op));                   
     string funcFor[] = {"for", "while"};
     vector<string> vectorFN(funcFor, funcFor + sizeof(funcFor) / sizeof(*funcFor));
