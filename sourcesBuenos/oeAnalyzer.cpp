@@ -50,70 +50,40 @@ int findChar(string s, char x)
     return count;
 }
 
-int analyzer(queue<string> lineasComp)
-{
-    //vector that stores all operators that do an elemental operation
-    char op[]={'+', '-', '*', '/', '=', '[', '<', '>'};
-    vector<char>vectorOP(op,op + sizeof(op)/sizeof(*op));
-    string funcFor[]={"for","while"};
-    vector<string>vectorFN(funcFor,funcFor + sizeof(funcFor)/sizeof(*funcFor));
-    string funcIf[]={"if"};
-    vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));
+void analisisPrueba(queue<string> lineasComp){
 
-    vector<string> vecComp;
+    char op[]={'+', '-', '*', '/', '=', '[', '<', '>'};  //check cout and return
+    vector<char> vectorOP(op, op + sizeof(op) / sizeof(*op));                   
+    string funcFor[] = {"for", "while"};
+    string funcIf[] = {"if"};
 
-    // //que that stores each line of the analized file
-    // queue<string> lineasComp;
+    vector<string> vecComp; // se almacena los valores de la cola
+    vector<int> contOE;//usado para almacenar Operaciones Elementales
 
-    // //just for testing
-    // lineasComp.push("void oddEvenSort(int* a, int n){");
-    // lineasComp.push("int i=2+3;");
-    // lineasComp.push("for(int i=(n-1); i>=0; i--){");
-    // //lineasComp.push("for(int j=(n-1); j>0; j--){");
-    // //lineasComp.push("if(a[j]<a[j-1]){");
-    // lineasComp.push("int temp = a[j];");
-    // lineasComp.push("a[j]=a[j-1];");
-    // //lineasComp.push("a[j-1]=temp;");
-    // lineasComp.push("}");
-    // lineasComp.push("}");
-    // //lineasComp.push("}");
-    // //lineasComp.push("}");
-    // lineasComp.push("cout << endl");
+    int cont = lineasComp.size(); 
+    int cont1 , mayor = 0;
 
-    //
-    int cont = lineasComp.size();
-
-    //elemental operation counter
-    vector<int> opCounter;
-    int cont1;
-
-    //iterates thtough each line of file
-    for(int i=0; i < cont; i++)
+    for (int i = 0; i < cont; i++) //recorre por todas las filas
     {
-        //saves line as string for practicality
-        string analize = lineasComp.front();
-        vecComp.push_back(lineasComp.front()); 
         cont1 = 0;
-
-        //iterates through operator vector
-        for(int i=0; i<vectorOP.size(); i++)
+        string analize = lineasComp.front();
+        for (int j = 0; j < vectorOP.size(); j++) //recorre y compara las operaciones
         {
-            cont1 += findChar(analize, vectorOP.at(i));
-            //checks if said operator is in line
+            cont1 += findChar(analize, vectorOP.at(j));
+            //checks if said operator is in line            
         }
-
-        opCounter.push_back(cont1);
-        // cout << cont1;
-        // cout << endl;
-        int mayor = analize.size();
-        PrintTable(vecComp, opCounter, mayor);
-        lineasComp.pop();
+        if(analize.size()> mayor)
+        {
+            mayor = analize.size();
+        }
+    
+        contOE.push_back(cont1);
+        
+        vecComp.push_back(lineasComp.front()); //usado para insertar los valores de la cola en el vector
+        lineasComp.pop(); //saca los valores de la cola, COMO POR??? :D 
     }
 
-    printArray(opCounter);
 
+    PrintTable(vecComp, contOE, mayor);
 
-    
-
-    return 0;
 }

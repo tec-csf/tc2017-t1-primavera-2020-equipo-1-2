@@ -12,6 +12,6 @@ void printArray(vector<int> a);
 
 int findChar(string s, char x);
 
-int analyzer(queue<string> lineasComp);
+void analisisPrueba(queue<string> lineasComp);
 
 #endif
