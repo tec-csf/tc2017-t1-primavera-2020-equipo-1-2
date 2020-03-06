@@ -18,6 +18,7 @@ template <class T>
 
 void PrintTable( <T> lineasComp)
 {
+
     int cont = lineasComp.size();
 
     cout << "No. de linea\t | \t\t\t\t\t\t\tCódigo\t\t\t\t\t\t\t\t | OE\t | Polinomio |" << endl;
@@ -30,6 +31,7 @@ void PrintTable( <T> lineasComp)
     }
 
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+
 
 }
 
@@ -48,6 +50,7 @@ int main(int argc, char const *argv[])
 
     cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n"    //clarifies the document that's been inserted
          << endl;
+
 
     inputFile.open(nombreArchivo.c_str());
 
