@@ -32,7 +32,7 @@ void analisisPrueba(queue<string> lineasComp){
     vector<int> contOE;//usado para almacenar Operaciones Elementales
 
     int cont = lineasComp.size(); 
-    int cont1 = 0;
+    int cont1 , mayor = 0;
 
     for (int i = 0; i < cont; i++) //recorre por todas las filas
     {
@@ -45,6 +45,11 @@ void analisisPrueba(queue<string> lineasComp){
             {
                 cont1++;
             }
+            
+        }
+        if(analize.size()> mayor)
+        {
+            mayor = analize.size();
         }
     
         contOE.push_back(cont1);
@@ -54,7 +59,7 @@ void analisisPrueba(queue<string> lineasComp){
     }
 
 
-    PrintTable(vecComp, contOE);
+    PrintTable(vecComp, contOE, mayor);
 
 }
 

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void PrintTable(vector<string> lineasComp, vector<int> contadorOE);
+void PrintTable(vector<string> lineasComp, vector<int> contadorOE, int maxLinea);
 
 void impresionMetodos(vector<int> contOE);
 
