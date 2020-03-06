@@ -1,0 +1,7 @@
+language: 
+    C++
+compiler: 
+    g++ 
+    clang
+script:
+    make
