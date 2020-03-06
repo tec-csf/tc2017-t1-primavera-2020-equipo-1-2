@@ -7,14 +7,14 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea)
 {
     int cont = vecComp.size();
 
-    cout <<setfill(' ') << setw(0) << "No. de linea|" << setfill(' ') << setw(maxLinea/2) << "Código";
-    cout<< setfill(' ') << setw(maxLinea/2)<<"|" << "OE|" << setfill(' ') << setw(50) <<"Polinomio|"<< endl;
+    cout <<setfill(' ') << setw(0) << "No. de linea|" << setfill(' ') << setw(maxLinea/2+3) << "Código";
+    cout<< setfill(' ') << setw(maxLinea/2)<<"|"<<setfill(' ') << setw(10)<< "OE" <<setfill(' ') << setw(10)  <<"|"<< setfill(' ') << setw(20) <<"Polinomio|"<< endl;
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 
     for (int i = 0; i < cont; i++)
     {
         cout <<setfill(' ') << setw(6) << i + 1 <<setfill(' ') << setw(7)<< "|" 
-        << setfill(' ') << setw(maxLinea) << vecComp.at(i) <<"|"<< contOE.at(i) << endl;
+        << setfill(' ') << setw(maxLinea) << vecComp.at(i) <<"|"<< setfill(' ') << setw(10) << contOE.at(i)<< setfill(' ') << setw(10) <<"|"<< endl;
     }
 
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
