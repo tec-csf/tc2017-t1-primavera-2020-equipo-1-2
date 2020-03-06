@@ -59,7 +59,7 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 
 * Para correr el programa
 	* Mediante la terminal, navegar a la carpeta sources
-	* Correr el comando 'g++ Tarea1.cpp'
+	* Correr el comando 'g++ -o tarea1 Tarea1.cpp printers.cpp'
 	* Correr el comando './a.out -i *ruta del archivo a analizar*'
 
 ## 3. Referencias
