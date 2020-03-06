@@ -1,0 +1,102 @@
+
+Se ingresó el documento con nombre Pruebas.cpp
+
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+4
+2
+2
+2
+0
+0
+0
+2
+2
+2
+2
+3
+3
+0
+0
+0
+0
+0
+1
+1
+0
+3
+0
+1
+3
+0
+1
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+No. de linea	 | 							Código								 | OE	 | Polinomio |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+1            	 |#include <iostream>
+2            	 |#include <stdio.h>
+3            	 |#include <fstream>
+4            	 |#include <vector>
+5            	 |#include <queue>
+6            	 |
+7            	 |using namespace std;
+8            	 |
+9            	 |int main()
+10            	 |{
+11            	 |    string op[] = {"+", "-", "++", "--", "=", "[]"};
+12            	 |    vector<string> vectorOP(op, op + sizeof(op) / sizeof(*op));
+13            	 |    string func[] = {"for", "if", "while"};
+14            	 |    vector<string> vectorFN(func, func + sizeof(func) / sizeof(*func));
+15            	 |
+16            	 |    queue<string> lineasComp;
+17            	 |    lineasComp.push("void oddEvenSort(int* a, int n){");
+18            	 |    lineasComp.push("for(int i=(n-1); i>=0; i--){");
+19            	 |    lineasComp.push("for(int j=(n-1); j>0; j--){");
+20            	 |    lineasComp.push("if(a[j]<a[j-1]){");
+21            	 |    lineasComp.push("int temp = a[j];");
+22            	 |    lineasComp.push("a[j]=a[j-1];");
+23            	 |    lineasComp.push("a[j-1]=temp;");
+24            	 |    lineasComp.push("}");
+25            	 |    lineasComp.push("}");
+26            	 |    lineasComp.push("}");
+27            	 |    lineasComp.push("}");
+28            	 |
+29            	 |    int cont = lineasComp.size();
+30            	 |    //bool found = false;
+31            	 |
+32            	 |    for (int i = 0; i < cont; i++)
+33            	 |    {
+34            	 |        string analize = lineasComp.front();
+35            	 |        for (int i = 0; i < vectorFN.size(); i++)
+36            	 |        {
+37            	 |            int found = analize.find(vectorFN.at(i));
+38            	 |            if (found >= 0)
+39            	 |            {
+40            	 |                cout << vectorFN.at(i);
+41            	 |                cout << endl;
+42            	 |            }
+43            	 |        }
+44            	 |        lineasComp.pop();
+45            	 |    }
+46            	 |
+47            	 |    return 0;
+48            	 |}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
