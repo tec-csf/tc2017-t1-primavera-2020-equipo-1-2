@@ -22,10 +22,14 @@ void impresionMetodos(vector<int> contOE){
 
     //cout << "Impresión de vectores" << endl;
 
+    cout << count << endl;
+
+    /*
     for (size_t i = 0; i < count; i++)
     {
         cout << contOE[i] << endl;
     }
+    */
     
 
 
