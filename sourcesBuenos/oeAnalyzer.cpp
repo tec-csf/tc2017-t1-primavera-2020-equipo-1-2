@@ -43,7 +43,6 @@ int findChar(string s, char x)
             {
                 //if not any of the above, adds to the elemental operation counter
                 count++;
-                cout << x;
             }
         }
     }
