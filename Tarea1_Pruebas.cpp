@@ -11,6 +11,9 @@
 #include <queue>
 
 using namespace std;
+
+vector<int> contOE;
+
 //template <class T>
 // documentacion
 
@@ -123,8 +126,9 @@ int main(int argc, char const *argv[])
         while (getline(inputFile, oraciones))
         {
             lineasComp.push(oraciones); // once the line is adding it to a queue
-            analisisPrueba(lineasComp);
         }
+        
+        analisisPrueba(lineasComp);
         //PrintTable(lineasComp);
         //cout<<lineasComp.size()<<endl;
     }
