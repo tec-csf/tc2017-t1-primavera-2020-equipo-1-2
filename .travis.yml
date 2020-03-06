@@ -1,5 +1,6 @@
 compiler: gcc
 language: cpp
 script: 
+    - cd sourcesBuenos
     - g++ Tarea1_Pruebas.cpp -std=c++17
-    - ./a.out -i test.cpp
+    - ./a.out -i ../examples/test.cpp
