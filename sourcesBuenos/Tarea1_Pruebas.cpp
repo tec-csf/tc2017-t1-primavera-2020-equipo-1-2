@@ -77,12 +77,12 @@ void PrintTable(vector<string> vecComp, vector<int> contOE)
 {
     int cont = vecComp.size();
 
-    cout << "No. de linea\t | \t\t\t\t\t\t\tCódigo\t\t\t\t\t\t\t\t | OE\t | Polinomio |" << endl;
+    cout <<setfill(' ') << setw(0) << "No. de linea|" << setfill(' ') << setw(50) << "Código|"<< setfill(' ') << setw(10) << "OE|" << setfill(' ') << setw(50) <<"Polinomio|"<< endl;
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 
     for (int i = 0; i < cont; i++)
     {
-        cout << i + 1 << "            \t |" << setfill(' ') << setw(50) << vecComp.at(i) << setfill(' ') << setw(50) << contOE.at(i) << endl;
+        cout <<setfill(' ') << setw(6) << i + 1 <<setfill(' ') << setw(7)<< "|" << setfill(' ') << setw(50) << vecComp.at(i) << setfill(' ') << setw(50) << contOE.at(i) << endl;
     }
 
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
