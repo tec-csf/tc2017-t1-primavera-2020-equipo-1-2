@@ -8,7 +8,10 @@ using namespace std;
 
 void printArray(vector<int> a)
 {
-
+    for (int i = 0; i < a.size(); ++i)
+    {
+        cout << a[i] << endl;
+    }
 }
 
 int findChar(string s, char x)
