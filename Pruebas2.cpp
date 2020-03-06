@@ -45,7 +45,6 @@ int findChar(string s, char x)
             }
         }
     }
-
     return count;
 }
 
@@ -82,28 +81,30 @@ int main(int argc, char const *argv[])
 
     //elemental operation counter
     vector<int> opCounter;
-    int cont1 = 0;
+    int cont1;
 
     //iterates thtough each line of file
     for(int i=0; i < cont; i++)
     {
         //saves line as string for practicality
         string analize = lineasComp.front();
+        cont1 = 0;
 
         //iterates through operator vector
         for(int i=0; i<vectorOP.size(); i++)
         {
             cont1 += findChar(analize, vectorOP.at(i));
             //checks if said operator is in line
-            opCounter.push_back(cont1);
         }
-        cout << cont1;
-        cout << endl;
 
-        printArray(opCounter);
+        opCounter.push_back(cont1);
+        // cout << cont1;
+        // cout << endl;
 
         lineasComp.pop();
     }
+
+    printArray(opCounter);
 
     return 0;
 }
