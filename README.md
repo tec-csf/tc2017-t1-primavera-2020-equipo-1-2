@@ -48,19 +48,19 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 
 * Contar con acceso a internet
 * Contar con una terminal
-** La terminal debe tener gcc instalado
-** La terminal debe tener git instalado
-** La terminal debe poder clonar un repositorio de git
+	* La terminal debe tener gcc instalado
+	* La terminal debe tener git instalado
+	* La terminal debe poder clonar un repositorio de git
 
 * Para clonar el repositorio
-** Crear una carpeta en la que se vaya a clonar el repositorio
-** Mediante la terminal, navegar a dicha carpeta
-** Correr el comando 'git clone https://github.com/tec-csf/tc2017-t1-primavera-2020-equipo-1-2.git'
+	* Crear una carpeta en la que se vaya a clonar el repositorio
+	* Mediante la terminal, navegar a dicha carpeta
+	* Correr el comando 'git clone https://github.com/tec-csf/tc2017-t1-primavera-2020-equipo-1-2.git'
 
 * Para correr el programa
-** Mediante la terminal, navegar a la carpeta sources
-** Correr el comando 'g++ Tarea1.cpp'
-** Correr el comando './a.out -i *ruta del archivo a analizar*'
+	* Mediante la terminal, navegar a la carpeta sources
+	* Correr el comando 'g++ Tarea1.cpp'
+	* Correr el comando './a.out -i *ruta del archivo a analizar*'
 
 ## 3. Referencias
 
