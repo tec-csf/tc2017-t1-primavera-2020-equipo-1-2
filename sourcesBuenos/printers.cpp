@@ -1,18 +1,7 @@
 #include "printers.h"
-#include <vector>
 #include <iostream>
 #include <stdio.h>
-#include <fstream>
 #include <iomanip>
-
-void impresionMetodos(vector<int> contOE){
-
-    int count = contOE.size();
-
-    cout << count<< "\t"; 
-    cout << contOE[count-1] << endl; //imprime last en el vector
-
-}
 
 void PrintTable(vector<string> vecComp, vector<int> contOE)
 {
@@ -28,4 +17,15 @@ void PrintTable(vector<string> vecComp, vector<int> contOE)
 
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 }
+
+void impresionMetodos(vector<int> contOE){
+
+    int count = contOE.size();
+
+    cout << count<< "\t"; 
+    cout << contOE[count-1] << endl; //imprime last en el vector
+
+}
+
+
 
