@@ -14,18 +14,39 @@ using namespace std;
 //template <class T>
 // documentacion
 
+void PrintTable(vector<string> lineasComp, vector<int> contadorOE);
+
+void impresionMetodos(vector<int> contOE){
+
+    int count = contOE.size();
+
+    //cout << "Impresión de vectores" << endl;
+
+    for (size_t i = 0; i < count; i++)
+    {
+        cout << contOE[i] << endl;
+    }
+    
+
+
+}
+
 /*Prueba*/
 void analisisPrueba(queue<string> lineasComp){
 
     string op[] = {"+", "-", "=", "[", " < ", " > ", " * " , " / "};
-    vector<string> vectorOP(op, op + sizeof(op) / sizeof(*op));
+    vector<string> vectorOP(op, op + sizeof(op) / sizeof(*op));                   
     string funcFor[] = {"for", "while"};
     vector<string> vectorFN(funcFor, funcFor + sizeof(funcFor) / sizeof(*funcFor));
     string funcIf[] = {"if"};
     vector<string> vectorFUN(funcIf, funcIf + sizeof(funcIf) / sizeof(*funcIf));
+    queue<int> contadorOE;
+
+    vector<string> vecComp;
+    vector<int> contOE;
 
     int cont = lineasComp.size();
-    int cont1;
+    int cont1, contOrden = 0;
     vector<string> oes;
 
     for (int i = 0; i < cont; i++)
@@ -40,15 +61,22 @@ void analisisPrueba(queue<string> lineasComp){
                 cont1++;
             }
         }
-        //PrintTable(lineasComp, cont1);
+        //cout << "Si esta fuera del for" << endl;
+        //cout << contOE.size() << endl;
+    
+        contOE.push_back(cont1);
+        
+        vecComp.push_back(lineasComp.front());
         lineasComp.pop();
     }
-    cout << cont1 << endl;
 
+
+    impresionMetodos(contOE);
+    //cout << vecComp << endl;
 
 }
-
-void PrintTable(queue<string> lineasComp/*, queue<T> contF*/)
+/*
+void PrintTable(vector<string> lineasComp, vector<int> contadorOE)
 {
     int cont = lineasComp.size();
 
@@ -58,12 +86,15 @@ void PrintTable(queue<string> lineasComp/*, queue<T> contF*/)
     for (int i = 1; i <= cont; i++)
     {
         cout << i << "            \t |" << lineasComp.front() << endl;
-        lineasComp.pop();
+        lineasComp.pop_back();
+
+        cout << i << "             \t" << contadorOE.front() << endl;
+        contadorOE.pop_back();
     }
 
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 }
-
+*/
 int main(int argc, char const *argv[])
 {
     string op[] = {"+", "-", "++", "--", "=", "[]"};
@@ -90,7 +121,7 @@ int main(int argc, char const *argv[])
             lineasComp.push(oraciones); // once the line is adding it to a queue
             analisisPrueba(lineasComp);
         }
-        PrintTable(lineasComp);
+        //PrintTable(lineasComp);
         //cout<<lineasComp.size()<<endl;
     }
     else
