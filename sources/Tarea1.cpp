@@ -16,7 +16,7 @@ template <class T>
 
 /*Prueba*/
 
-void PrintTable(queue<T> lineasComp)
+void PrintTable( <T> lineasComp)
 {
     int cont = lineasComp.size();
 
