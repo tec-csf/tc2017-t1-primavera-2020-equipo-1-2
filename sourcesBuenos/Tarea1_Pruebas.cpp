@@ -84,7 +84,8 @@ void PrintTable(vector<string> vecComp, vector<int> contOE)
 
     for (int i = 0; i < cont; i++)
     {
-        cout <<setfill(' ') << setw(6) << i + 1 <<setfill(' ') << setw(7)<< "|" << setfill(' ') << setw(50) << vecComp.at(i) << setfill(' ') << setw(50) << contOE.at(i) << endl;
+        cout <<setfill(' ') << setw(6) << i + 1 <<setfill(' ') << setw(7)<< "|" ;
+        cout<< vecComp.at(i) << setfill(' ') << setw(50) << contOE.at(i) << endl;
     }
 
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
