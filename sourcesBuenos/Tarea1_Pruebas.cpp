@@ -46,8 +46,6 @@ void analisisPrueba(queue<string> lineasComp){
                 cont1++;
             }
         }
-        //cout << "Si esta fuera del for" << endl;
-        //cout << contOE.size() << endl;
     
         contOE.push_back(cont1);
         
@@ -57,7 +55,7 @@ void analisisPrueba(queue<string> lineasComp){
 
 
     PrintTable(vecComp, contOE);
-    //cout << vecComp << endl;
+
 
 }
 
@@ -85,9 +83,6 @@ int main(int argc, char const *argv[])
             lineasComp.push(oraciones); // once the line is adding it to a queue
         }
         analisisPrueba(lineasComp);
-        //analisisPrueba(lineasComp);
-        //PrintTable(lineasComp);
-        //cout<<lineasComp.size()<<endl;
     }
     else
     {
