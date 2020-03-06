@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(){
-    string op[]={"+","-","=","[", "<", ">"};
+    string op[]={"+","-","=","[", "<", ">", "*"};
     vector<string>vectorOP(op,op + sizeof(op)/sizeof(*op));
     string funcFor[]={"for","while"};
     vector<string>vectorFN(funcFor,funcFor + sizeof(funcFor)/sizeof(*funcFor));
@@ -15,10 +15,10 @@ int main(){
     vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));
 
     queue<string> lineasComp;
-    /*lineasComp.push("void oddEvenSort(int* a, int n){");
-    lineasComp.push("for(int i=(n-1); i>=0; i--){");
-    lineasComp.push("for(int j=(n-1); j>0; j--){");
-    lineasComp.push("if(a[j]<a[j-1]){");
+    //lineasComp.push("void oddEvenSort(int* a, int n){");
+    //lineasComp.push("for(int i=(n-1); i>=0; i--){");
+    //lineasComp.push("for(int j=(n-1); j>0; j--){");
+    /*lineasComp.push("if(a[j]<a[j-1]){");
     lineasComp.push("int temp = a[j];");
     lineasComp.push("a[j]=a[j-1];");
     lineasComp.push("a[j-1]=temp;");
@@ -26,7 +26,8 @@ int main(){
     lineasComp.push("}");
     lineasComp.push("}");
     lineasComp.push("}");*/
-    lineasComp.push("int x= 1+2");
+    lineasComp.push("cout << endl");
+    lineasComp.push("int i=2+3;");
 
     int cont = lineasComp.size();
     int cont1 = 0;
@@ -36,12 +37,16 @@ int main(){
         string analize = lineasComp.front();
         for(int i=0; i<vectorOP.size(); i++){
             int found = analize.find(vectorOP.at(i));
-            if(found >= 0){
+            int find = analize.find("<<");
+            if(find >= 0){
+                break;
+            }
+            else if(found >= 0){
                 cont1++;
             }
-            cout << cont1;
-            cout << endl;
         }
+        cout << cont1;
+        cout << endl;
 
 
         /*for(int i=0; i < vectorFN.size(); i++){
