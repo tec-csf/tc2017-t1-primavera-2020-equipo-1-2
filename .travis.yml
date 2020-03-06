@@ -1,5 +1,5 @@
 compiler: gcc
 language: cpp
 script: 
-    - g++ Tarea1_Prueba.cpp -std=c++17
+    - g++ Tarea1_Pruebas.cpp -std=c++17
     - ./a.out -i test.cpp
