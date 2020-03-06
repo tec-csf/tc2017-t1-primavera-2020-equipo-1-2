@@ -1,4 +1,5 @@
 #include "oeAnalyzer.h"
+#include "printers.h"
 #include <iostream>
 #include <stdio.h>
 #include <fstream>
@@ -59,6 +60,8 @@ int analyzer(queue<string> lineasComp)
     string funcIf[]={"if"};
     vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));
 
+    vector<string> vecComp;
+
     // //que that stores each line of the analized file
     // queue<string> lineasComp;
 
@@ -89,6 +92,7 @@ int analyzer(queue<string> lineasComp)
     {
         //saves line as string for practicality
         string analize = lineasComp.front();
+        vecComp.push_back(lineasComp.front()); 
         cont1 = 0;
 
         //iterates through operator vector
@@ -101,11 +105,15 @@ int analyzer(queue<string> lineasComp)
         opCounter.push_back(cont1);
         // cout << cont1;
         // cout << endl;
-
+        int mayor = analize.size();
+        PrintTable(vecComp, opCounter, mayor);
         lineasComp.pop();
     }
 
     printArray(opCounter);
+
+
+    
 
     return 0;
 }

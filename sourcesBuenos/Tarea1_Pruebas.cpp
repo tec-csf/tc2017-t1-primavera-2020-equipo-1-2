@@ -4,7 +4,6 @@
  *  
  * 
  */
-#include "printers.h"
 #include "oeAnalyzer.h"
 #include <stdio.h>
 #include <fstream>
@@ -87,7 +86,7 @@ int main(int argc, char const *argv[])
         {
             lineasComp.push(oraciones); // once the line is adding it to a queue
         }
-        analisisPrueba(lineasComp);
+        analyzer(lineasComp);
     }
     else
     {
