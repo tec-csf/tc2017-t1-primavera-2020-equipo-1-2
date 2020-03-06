@@ -77,8 +77,9 @@ void PrintTable(vector<string> vecComp, vector<int> contOE)
 {
     int cont = vecComp.size();
 
-    cout <<setfill(' ') << setw(0) << "No. de linea|" << setfill(' ') << setw(50) << "Código"<< setfill(' ') << setw(50)<<"|";
-    cout<< setfill(' ') << setw(5) << "OE" << setfill(' ') << setw(5)<<"|"<< setfill(' ') << setw(15) <<"Polinomio"<< setfill(' ') << setw(7)<<"|"<< endl;
+    cout <<setfill(' ') << setw(0) << "No. de linea|" << setfill(' ') << setw(50) << "Código";
+    cout<< setfill(' ') << setw(50)<< "|" << setfill(' ') << setw(5) << "OE" << setfill(' ');
+    cout<< setw(5)<<"|"<< setfill(' ') << setw(15) <<"Polinomio"<< setfill(' ') << setw(7)<<"|"<< endl;
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 
     for (int i = 0; i < cont; i++)
