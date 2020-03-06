@@ -2,5 +2,5 @@ compiler: gcc
 language: cpp
 script: 
     - cd sourcesBuenos
-    - g++ -o tarea1 Tarea1.cpp printers.cpp -std=c++17
+    - g++ -o tarea1 Tarea1_Pruebas.cpp printers.cpp -std=c++17
     - ./a.out -i ../examples/test.cpp
