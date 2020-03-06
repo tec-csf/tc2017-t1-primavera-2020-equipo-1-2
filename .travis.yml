@@ -1,5 +1,5 @@
-language: 
-    C++
-compiler: 
-    g++ 
-    clang
+compiler: gcc
+language: cpp
+script: 
+    - g++ Tarea1_Prueba.cpp -std=c++17
+    - ./a.out -i //nombre del archivo a leer
