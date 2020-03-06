@@ -1,3 +1,4 @@
+#include "oeAnalyzer.h"
 #include <iostream>
 #include <stdio.h>
 #include <fstream>
@@ -48,7 +49,7 @@ int findChar(string s, char x)
     return count;
 }
 
-int main(int argc, char const *argv[])
+int analyzer(queue<string> lineasComp)
 {
     //vector that stores all operators that do an elemental operation
     char op[]={'+', '-', '*', '/', '=', '[', '<', '>'};
@@ -58,23 +59,23 @@ int main(int argc, char const *argv[])
     string funcIf[]={"if"};
     vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));
 
-    //que that stores each line of the analized file
-    queue<string> lineasComp;
+    // //que that stores each line of the analized file
+    // queue<string> lineasComp;
 
-    //just for testing
-    lineasComp.push("void oddEvenSort(int* a, int n){");
-    lineasComp.push("int i=2+3;");
-    lineasComp.push("for(int i=(n-1); i>=0; i--){");
-    //lineasComp.push("for(int j=(n-1); j>0; j--){");
-    //lineasComp.push("if(a[j]<a[j-1]){");
-    lineasComp.push("int temp = a[j];");
-    lineasComp.push("a[j]=a[j-1];");
-    //lineasComp.push("a[j-1]=temp;");
-    lineasComp.push("}");
-    lineasComp.push("}");
-    //lineasComp.push("}");
-    //lineasComp.push("}");
-    lineasComp.push("cout << endl");
+    // //just for testing
+    // lineasComp.push("void oddEvenSort(int* a, int n){");
+    // lineasComp.push("int i=2+3;");
+    // lineasComp.push("for(int i=(n-1); i>=0; i--){");
+    // //lineasComp.push("for(int j=(n-1); j>0; j--){");
+    // //lineasComp.push("if(a[j]<a[j-1]){");
+    // lineasComp.push("int temp = a[j];");
+    // lineasComp.push("a[j]=a[j-1];");
+    // //lineasComp.push("a[j-1]=temp;");
+    // lineasComp.push("}");
+    // lineasComp.push("}");
+    // //lineasComp.push("}");
+    // //lineasComp.push("}");
+    // lineasComp.push("cout << endl");
 
     //
     int cont = lineasComp.size();
