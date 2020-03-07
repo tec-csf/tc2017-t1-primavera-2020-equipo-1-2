@@ -11,7 +11,7 @@ int main()
     // sum of two numbers in stored in variable sumOfTwoNumbers
     sumOfTwoNumbers = firstNumber + secondNumber;
 
-    // Prints sum 
+    // Prints sum of number 1 + number 2
     cout << firstNumber << " + " <<  secondNumber << " = " << sumOfTwoNumbers;     
 
     return 0;
