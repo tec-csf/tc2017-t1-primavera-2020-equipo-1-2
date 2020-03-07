@@ -48,7 +48,7 @@ int findChar(string s, vector<char> op)
                     }
                     else if (s[i-1] == 't')
                     {
-                        //checks if '*' is multiplication or pointer
+                        //checks if '*' is pointer. WORKAROUND
                     }
                     else
                     {
@@ -60,6 +60,7 @@ int findChar(string s, vector<char> op)
 
             if (ignore)
             {
+                //stops analyzing line if any of the cases stated above is true
                 break;
             }
         }
@@ -87,9 +88,14 @@ void analisisPrueba(queue<string> lineasComp){
     {
         ignore = false;
         cont1 = 0;
+
+        //saves line as string
         string analize = lineasComp.front();
+
+        //checks if said operator is in line    
         cont1 += findChar(analize, vectorOP);
-        //checks if said operator is in line            
+        
+        //checks thre length of the largest line        
         if(analize.size()> mayor)
         {
             mayor = analize.size();
