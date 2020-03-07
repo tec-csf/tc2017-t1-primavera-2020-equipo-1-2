@@ -8,6 +8,8 @@
 
 using namespace std;
 
+
+//Checks if char x is in string s and how many times
 int findChar(string s, char x)
 {
     int count = 0;
@@ -41,6 +43,8 @@ int findChar(string s, char x)
     return count;
 }
 
+
+//analyzes file lines for elemental operations and certain keywords
 void analisisPrueba(queue<string> lineasComp){
 
     char op[]={'+', '-', '*', '/', '=', '[', '<', '>'};  //check cout and return
@@ -48,17 +52,17 @@ void analisisPrueba(queue<string> lineasComp){
     string funcFor[] = {"for", "while"};
     string funcIf[] = {"if"};
 
-    vector<string> vecComp; // se almacena los valores de la cola
-    vector<int> contOE;//usado para almacenar Operaciones Elementales
+    vector<string> vecComp; // for saving queue elements in a vector
+    vector<int> contOE;//for saving elemental operations in each line
 
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
 
-    for (int i = 0; i < cont; i++) //recorre por todas las filas
+    for (int i = 0; i < cont; i++) //iterates over each line
     {
         cont1 = 0;
         string analize = lineasComp.front();
-        for (int j = 0; j < vectorOP.size(); j++) //recorre y compara las operaciones
+        for (int j = 0; j < vectorOP.size(); j++) //iterates over the vector containing relevant operators
         {
             cont1 += findChar(analize, vectorOP.at(j));
             //checks if said operator is in line            
@@ -68,10 +72,10 @@ void analisisPrueba(queue<string> lineasComp){
             mayor = analize.size();
         }
     
-        contOE.push_back(cont1);
+        contOE.push_back(cont1); //saves elemental operation count in the line
         
-        vecComp.push_back(lineasComp.front()); //usado para insertar los valores de la cola en el vector
-        lineasComp.pop(); //saca los valores de la cola, COMO POR??? :D 
+        vecComp.push_back(lineasComp.front()); //saves line in queue before being deleted
+        lineasComp.pop(); //removes line from queue
     }
 
 
