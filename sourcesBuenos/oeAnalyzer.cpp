@@ -22,7 +22,6 @@ int findChar(string s, vector<char> op)
             //iterates through each operator in vector
             for(int j = 0; j < op.size(); j++)
             {
-                cout << ignore;
                 //compares char with operator
                 if (s[i] == op[j]) 
                 {   
@@ -72,7 +71,7 @@ int findChar(string s, vector<char> op)
 //analyzes file lines for elemental operations and certain keywords
 void analisisPrueba(queue<string> lineasComp){
 
-    char op[]={'#', '/', '+', '-', '*', '=', '[', '<', '>'};  //check cout and return
+    char op[]={'#', '/', '+', '-', '*', '=', '[', '<', '>'};  //TODO: check cout and return
     vector<char> vectorOP(op, op + sizeof(op) / sizeof(*op));                   
     string funcFor[] = {"for", "while"};
     string funcIf[] = {"if"};
