@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
 
     queue<string> lineasComp;
     fstream inputFile;               //file to read
-    string nombreArchivo, oraciones; //strings meant to initialize the document and it's content
+    string nombreArchivo, oraciones; //strings to initialize the document and its content
 
     nombreArchivo = argv[2];
 
@@ -40,7 +40,7 @@ int main(int argc, char const *argv[])
 
         while (getline(inputFile, oraciones))
         {
-            lineasComp.push(oraciones); // once the line is adding it to a queue
+            lineasComp.push(oraciones); // pushing each line of the file into a queue
         }
         analisisPrueba(lineasComp);
     }

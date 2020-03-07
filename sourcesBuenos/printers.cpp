@@ -25,8 +25,16 @@ void impresionMetodos(vector<int> contOE){
     int count = contOE.size();
 
     cout << count<< "\t"; 
-    cout << contOE[count-1] << endl; //imprime last en el vector
+    cout << contOE[count-1] << endl; //prints last element in vector
 
+}
+
+void printArray(vector<int> a)
+{
+    for (int i = 0; i < a.size(); ++i)
+    {
+        cout << a[i] << endl;
+    }
 }
 
 

@@ -7,6 +7,8 @@
 
 using namespace std;
 
+void printArray(vector<int> a);
+
 void PrintTable(vector<string> lineasComp, vector<int> contadorOE, int maxLinea);
 
 void impresionMetodos(vector<int> contOE);

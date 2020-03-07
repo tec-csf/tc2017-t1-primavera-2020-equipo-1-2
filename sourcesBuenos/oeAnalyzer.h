@@ -8,8 +8,6 @@
 
 using namespace std;
 
-void printArray(vector<int> a);
-
 int findChar(string s, char x);
 
 void analisisPrueba(queue<string> lineasComp);
