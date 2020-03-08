@@ -13,7 +13,7 @@ using namespace std;
 int findChar(string s, vector<char> op)
 {
     int count = 0;
-    bool ignore;
+    bool ignore = false;
 
     if(!ignore)
     {   //iterates through each char of line
