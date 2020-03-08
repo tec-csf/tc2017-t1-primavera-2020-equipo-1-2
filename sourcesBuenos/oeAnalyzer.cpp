@@ -94,8 +94,8 @@ void analisisPrueba(queue<string> lineasComp){
 
         //checks if said operator is in line    
         cont1 += findChar(analize, vectorOP);
-
-        //checks the length of the largest line        
+        
+        //checks thre length of the largest line        
         if(analize.size()> mayor)
         {
             mayor = analize.size();
@@ -104,9 +104,9 @@ void analisisPrueba(queue<string> lineasComp){
         contOE.push_back(cont1); //saves elemental operation count in the line
         
         vecComp.push_back(lineasComp.front()); //saves line in queue before being deleted
-
         lineasComp.pop(); //removes line from queue
     }
+
 
     PrintTable(vecComp, contOE, mayor);
 
