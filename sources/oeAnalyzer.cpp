@@ -14,11 +14,20 @@ int findChar(string s, vector<char> op)
 {
     int count = 0;
     bool ignore = false;
+    bool quotes = false;
 
-    if(!ignore)
-    {   //iterates through each char of line
-        for (int i = 0; i < s.size(); i++)
+    //iterates through each char of line
+    for (int i = 0; i < s.size(); i++)
+    {
+        //checks if quotes
+        if (s[i] == '"')
         {
+            //if quote found, check if it opens or closes string
+            quotes = !quotes;
+        }
+        //if start of quotes, ignore chars. If end of quotes, start analyzing chars again
+        if(!quotes)
+        {  
             //iterates through each operator in vector
             for(int j = 0; j < op.size(); j++)
             {
@@ -57,12 +66,12 @@ int findChar(string s, vector<char> op)
                     }
                 }
             }
+        }
 
-            if (ignore)
-            {
-                //stops analyzing line if any of the cases stated above is true
-                break;
-            }
+        if (ignore)
+        {
+            //stops analyzing line if any of the cases stated above is true
+            break;
         }
     }
     return count;
