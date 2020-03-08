@@ -4,53 +4,34 @@
  *  
  * 
  */
-#include <iostream>
+#include "oeAnalyzer.h"
+#include "printers.h"
 #include <stdio.h>
 #include <fstream>
 #include <vector>
+#include <iomanip>
+#include <iostream>
 #include <queue>
 
 using namespace std;
-template <class T>
-// documentacion
+
+//template <class T>
 
 /*Prueba*/
 
-void PrintTable( <T> lineasComp)
-{
-
-    int cont = lineasComp.size();
-
-    cout << "No. de linea\t | \t\t\t\t\t\t\tCódigo\t\t\t\t\t\t\t\t | OE\t | Polinomio |" << endl;
-    cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
-
-    for (int i = 1; i <= cont; i++)
-    {
-        cout << i << "            \t |" << lineasComp.front() <<endl;
-        lineasComp.pop();
-    }
-
-    cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
-
-
-}
-
 int main(int argc, char const *argv[])
 {
-    string op[]={"+","-","++","--","=","[]"};
-    vector<string>vectorOP(op,op + sizeof(op)/sizeof(*op));
-    string func[]={"for","if","while"};
-    vector<string>vectorFN(func,func + sizeof(func)/sizeof(*func));
+    string op[] = {"+", "-", "++", "--", "=", "[]"};
+    string func[] = {"for", "if", "while"};
 
     queue<string> lineasComp;
-    fstream inputFile;                  //file to read
-    string nombreArchivo, oraciones;    //strings meant to initialize the document and it's content
+    fstream inputFile;               //file to read
+    string nombreArchivo, oraciones; //strings to initialize the document and its content
 
     nombreArchivo = argv[2];
 
-    cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n"    //clarifies the document that's been inserted
+    cout << "\nSe ingresó el documento con nombre " << nombreArchivo << "\n" //clarifies the document that's been inserted
          << endl;
-
 
     inputFile.open(nombreArchivo.c_str());
 
@@ -59,10 +40,9 @@ int main(int argc, char const *argv[])
 
         while (getline(inputFile, oraciones))
         {
-            lineasComp.push(oraciones); // once the line is adding it to a queue
+            lineasComp.push(oraciones); // pushing each line of the file into a queue
         }
-            PrintTable(lineasComp);
-        //cout<<lineasComp.size()<<endl;
+        analisisPrueba(lineasComp);
     }
     else
     {
