@@ -9,6 +9,7 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea)
 
     //table formatting
     cout << setfill(' ') << setw(0) << "No. de linea|" << setfill(' ') << setw((maxLinea + 6) / 2) << "Código";
+    
     cout << setfill(' ') << setw(maxLinea / 2 + 10) << "|" << setfill(' ') << setw(10) << "OE" << setfill(' ') << setw(10) << "|" << setfill(' ') << setw(20) << "Polinomio|" << endl;
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 
