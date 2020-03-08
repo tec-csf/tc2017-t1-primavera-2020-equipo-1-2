@@ -1,6 +1,6 @@
 compiler: gcc
 language: cpp
 script: 
-    - cd sourcesBuenos
-    - g++ -o tarea1 Tarea1_Pruebas.cpp printers.cpp oeAnalyzer.cpp -std=c++17
+    - cd sources
+    - g++ -o tarea1 Tarea1.cpp printers.cpp oeAnalyzer.cpp -std=c++17
     - ./tarea1 -i ../examples/test.cpp
