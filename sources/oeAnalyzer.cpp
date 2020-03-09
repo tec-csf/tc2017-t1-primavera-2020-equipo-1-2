@@ -153,6 +153,7 @@ void analisisPrueba(queue<string> lineasComp){
     string funcFor[]={"for","while"};
     vector<string>vectorFN(funcFor,funcFor + sizeof(funcFor)/sizeof(*funcFor));
     string funcIf[]={"if"};
+    vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));
                 
 
     vector<string> vecComp; // for saving queue elements in a vector
