@@ -59,6 +59,11 @@ int findChar(string s, vector<char> op)
                     {
                         //checks if '*' is pointer. WORKAROUND
                     }
+
+                    else if ((s[i] == '<' || '>') && s[i+1] == '=')
+                    {
+                        //if sign is >= or <=, ignores the first char so it only counts as one operation
+                    }
                     else
                     {
                         //if not any of the above, adds to the elemental operation counter
