@@ -23,7 +23,7 @@ int findKey(string str, int* add)
             return pos;
         }
     }
-
+    return -1;
 }
 
 //Checks if char x is in string s and how many times
