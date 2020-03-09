@@ -73,9 +73,11 @@ int findChar(string s, vector<char> op)
 void analisisPrueba(queue<string> lineasComp){
 
     char op[]={'#', '/', '+', '-', '*', '=', '[', '<', '>'};  //TODO: check cout and return
-    vector<char> vectorOP(op, op + sizeof(op) / sizeof(*op));                   
-    string funcFor[] = {"for", "while"};
-    string funcIf[] = {"if"};
+    vector<char> vectorOP(op, op + sizeof(op) / sizeof(*op));
+    string funcFor[]={"for","while"};
+    vector<string>vectorFN(funcFor,funcFor + sizeof(funcFor)/sizeof(*funcFor));
+    string funcIf[]={"if"};
+    vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));                
 
     vector<string> vecComp; // for saving queue elements in a vector
     vector<int> contOE;//for saving elemental operations in each line
