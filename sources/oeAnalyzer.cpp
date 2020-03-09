@@ -8,10 +8,28 @@
 
 using namespace std;
 
+int findKey(string str, int* add)
+{
+    vector<string> keywords = {"int", "char", "string", "double", "bool", "long", "float", "class"};
+    size_t found;
+    int pos;
+    for (int i = 0; i < keywords.size(); ++i)
+    {
+        found = str.find(keywords[i]);
+        if (found != string::npos)
+        {
+            pos = static_cast<int>(found);
+            return pos;
+        }
+    }
+
+}
+
 //Checks if char x is in string s and how many times
 int findChar(string s)
 {
     int count = 0;
+    int add;
     bool ignore = false;
     bool quotes = false;
 
@@ -59,14 +77,15 @@ int findChar(string s)
                     {
                         //pointer case. ignore
                     }
+                    else if (findKey(s, &add) > (i-5))
+                    {
+                        //pointer case. ignore
+                    }
                     else
                     {
                         count++;
                     }
-                    // else if (/* keyword before*/)
-                    // {
-                    //     /* code */
-                    // }
+                    
                     
                     break;
                 case '=':
@@ -79,9 +98,14 @@ int findChar(string s)
                     count++;
                     break;
                 case '<':
-                    if (s[i-1] == '<' || s[i+1] == '<' || (s[i+1] == 'T' && s[i+2] == '>'))
+                    if (s[i-1] == '<' || s[i+1] == '<' || (s[i+1] == 'T' || s[i+2] == '>'))
                     {
                         //if it is part of an input stream, references object or is part of template, ignore
+                    }
+                    else if (findKey(s, &add) < (i+2) && findKey(s, &add) >= i)
+                    {
+                        //template case. ignore
+                        cout << findKey(s, &add) << endl;
                     }
                     else
                     {
@@ -89,13 +113,13 @@ int findChar(string s)
                     }
                     break;
                 case '>':
-                    if (s[i-1] == '>' || s[i+1] == '>' || s[i-1] == '-' || (s[i-1] == 'T' && s[i-2] == '<'))
+                    if (s[i-1] == '>' || s[i+1] == '>' || s[i-1] == '-' || (s[i-1] == 'T' || s[i-2] == '<'))
                     {
                         //if it is part of an input stream, or is part of template, ignore
                     }
-                    else if(false)
+                    else if (findKey(s, &add) > (i-5) && findKey(s, &add) <= i)
                     {
-
+                        //template case. ignore
                     }
                     else
                     {
@@ -118,16 +142,7 @@ int findChar(string s)
     return count;
 }
 
-// int findKey(string str)
-// {
-//     vector<string> keywords = {"int", "char", "string", "double", "bool", "long", "float"};
 
-//     for (int i = 0; i < count; ++i)
-//     {
-//         /* code */
-//     }
-
-// }
 
 
 //analyzes file lines for elemental operations and certain keywords
