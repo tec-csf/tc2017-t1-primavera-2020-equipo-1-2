@@ -8,7 +8,6 @@ int main()
 {
     string line;
     ifstream myfile;
-
     ofstream myOfile;
     myOfile.open ("polinomio.txt");
     myOfile << "(3*n-1)*(3*n +1)";
