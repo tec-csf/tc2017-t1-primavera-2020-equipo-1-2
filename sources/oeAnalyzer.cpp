@@ -10,7 +10,8 @@ using namespace std;
 
 int findKey(string str, int* add)
 {
-    vector<string> keywords = {"int", "char", "string", "double", "bool", "long", "float", "class"};
+    string kw[]={"int", "char", "string", "double", "bool", "long", "float", "class"};  //TODO: check cout and return
+    vector<string> keywords(kw, kw + sizeof(kw) / sizeof(*kw)); 
     size_t found;
     int pos;
     for (int i = 0; i < keywords.size(); ++i)
