@@ -8,9 +8,8 @@
 
 using namespace std;
 
-
 //Checks if char x is in string s and how many times
-int findChar(string s, vector<char> op)
+int findChar(string s)
 {
     int count = 0;
     bool ignore = false;
@@ -28,49 +27,86 @@ int findChar(string s, vector<char> op)
         //if start of quotes, ignore chars. If end of quotes, start analyzing chars again
         if(!quotes)
         {  
-            //iterates through each operator in vector
-            for(int j = 0; j < op.size(); j++)
+            switch(s[i])
             {
-                //compares char with operator
-                if (s[i] == op[j]) 
-                {   
-                    //ignores line if it starts with "#"
-                    if (s[i] == '#')
+                case '#':
+                    ignore = true;
+                    break;
+                case '/':
+                    if (s[i+1] == '/')
                     {
                         ignore = true;
-                        break;
                     }
-                    else if (!(s[i] == '+' || s[i] == '-') && s[i+1] == s[i])
+                    break;
+                case '+':
+                    if (!(s[i-1] == '+'))
                     {
-                        //checks if duplicate sign. Ignores char if it is << or >>
-                        if (s[i] == '/')
-                        {
-                            ignore = true;
-                            break;
-                            //if duplicate is "//"", ignores rest of line to treat it as comment
-                        }
+                        count++;
                     }
-        
-                    else if (s[i-1] == op[j] )
+                    break;
+                case '-':
+                    if (!(s[i-1] == '-' || s[i+1] == '>'))
                     {
-                        //checks if duplicate sign. Ignores char if it is.
+                        count++;
                     }
-                    else if (s[i-1] == 't')
+                    break;
+                case '*':
+                    if (s[i-1] == '*' || s[i+1] == '*')
                     {
-                        //checks if '*' is pointer. WORKAROUND
+                        //pointer case. ignore
                     }
-
-                    else if ((s[i] == '<' || '>') && s[i+1] == '=')
+                    else if(s[i-1] == '>' || s[i-2] == '>')
                     {
-                        //if sign is >= or <=, ignores the first char so it only counts as one operation
+                        //pointer case. ignore
                     }
                     else
                     {
-                        //if not any of the above, adds to the elemental operation counter
                         count++;
                     }
-                }
-            }
+                    // else if (/* keyword before*/)
+                    // {
+                    //     /* code */
+                    // }
+                    
+                    break;
+                case '=':
+                    if (!(s[i-1] == '>' || s[i-1] == '<' || s[i-1] == '='))
+                    {
+                        count++;
+                    }
+                    break;
+                case '[':
+                    count++;
+                    break;
+                case '<':
+                    if (s[i-1] == '<' || s[i+1] == '<' || (s[i+1] == 'T' && s[i+2] == '>'))
+                    {
+                        //if it is part of an input stream, references object or is part of template, ignore
+                    }
+                    else
+                    {
+                        count++;
+                    }
+                    break;
+                case '>':
+                    if (s[i-1] == '>' || s[i+1] == '>' || s[i-1] == '-' || (s[i-1] == 'T' && s[i-2] == '<'))
+                    {
+                        //if it is part of an input stream, or is part of template, ignore
+                    }
+                    else if(false)
+                    {
+
+                    }
+                    else
+                    {
+                        count ++;
+                    }
+
+                    break;
+                case '%':
+                    count++;
+                    break;
+            }   
         }
 
         if (ignore)
@@ -82,6 +118,17 @@ int findChar(string s, vector<char> op)
     return count;
 }
 
+// int findKey(string str)
+// {
+//     vector<string> keywords = {"int", "char", "string", "double", "bool", "long", "float"};
+
+//     for (int i = 0; i < count; ++i)
+//     {
+//         /* code */
+//     }
+
+// }
+
 
 //analyzes file lines for elemental operations and certain keywords
 void analisisPrueba(queue<string> lineasComp){
@@ -91,7 +138,7 @@ void analisisPrueba(queue<string> lineasComp){
     string funcFor[]={"for","while"};
     vector<string>vectorFN(funcFor,funcFor + sizeof(funcFor)/sizeof(*funcFor));
     string funcIf[]={"if"};
-    vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));               
+                
 
     vector<string> vecComp; // for saving queue elements in a vector
     vector<int> contOE;//for saving elemental operations in each line
@@ -109,7 +156,7 @@ void analisisPrueba(queue<string> lineasComp){
         string analize = lineasComp.front();
 
         //checks if said operator is in line    
-        cont1 += findChar(analize, vectorOP);
+        cont1 += findChar(analize);
         
         //checks thre length of the largest line        
         if(analize.size()> mayor)
