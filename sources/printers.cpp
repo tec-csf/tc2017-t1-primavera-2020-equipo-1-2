@@ -20,6 +20,8 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea)
     }
 
     cout << "--------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "Polinimio: T(n)= "<<endl;
+    cout << "Complejidad: O("<<"aquí va el mayor de poliniomio"<<")"<<endl;
 }
 
 void impresionMetodos(vector<int> contOE){
