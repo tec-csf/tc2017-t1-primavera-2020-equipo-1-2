@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 int findKey(string str, int* add)
 {
     string kw[]={"int", "char", "string", "double", "bool", "long", "float", "class"};  //TODO: check cout and return
@@ -143,7 +144,31 @@ int findChar(string s)
     return count;
 }
 
-
+void findPoli(string s)
+{
+    string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
+    vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
+    size_t found;
+    int flag = 0;
+    int count = 0;
+    int pos;
+    for (int i = 0; i < functions.size(); ++i)
+    {
+        found = s.find(functions[i]);
+        if (found != string::npos)
+        {
+            pos = static_cast<int>(found);
+            flag = 1;
+            break;
+        }
+        else
+        {
+            flag=-1;
+        }
+    }
+    cout << flag << endl;
+    
+}
 
 
 //analyzes file lines for elemental operations and certain keywords
@@ -175,6 +200,9 @@ void analisisPrueba(queue<string> lineasComp){
         //checks if said operator is in line    
         cont1 += findChar(analize);
         
+        //tries to make the polynom
+            findPoli(analize);
+
         //checks thre length of the largest line        
         if(analize.size()> mayor)
         {
