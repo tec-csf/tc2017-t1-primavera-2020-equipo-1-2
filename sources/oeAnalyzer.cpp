@@ -203,10 +203,9 @@ void findPoli(string s)
 }
 
 
-/* analisisPrueba: this method founds the elemental Operations in each line
-* Note: It won't count the keywords specified
-* @param string contains the line of the anlyzed code
-* @return int which contains the number of elemental operations 
+/* analisisPrueba: this method iterates over the lines of code 
+* @param queue that containes the file to be analyze 
+* @return void
 */
 void analisisPrueba(queue<string> lineasComp){
 
