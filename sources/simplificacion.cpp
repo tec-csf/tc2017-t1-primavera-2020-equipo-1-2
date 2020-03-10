@@ -26,7 +26,7 @@ string busqueda(string s)
     }
     return s;
 }
-int main()
+string simplifica()
 {
     string line; //lineas que va jalando del archivo
     ofstream myOfile;
@@ -45,10 +45,10 @@ int main()
         {
             cout << line << '\n';
             cout<<busqueda(line)<<endl;
-
-            
+            line = busqueda(line);
         }
         myfile.close();
     }
     myfile.close();
+    return line;
 }
