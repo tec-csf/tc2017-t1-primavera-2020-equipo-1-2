@@ -54,6 +54,6 @@ int main()
 {
     
     instalar();
-
+    simplificar();
    
 }
