@@ -33,7 +33,10 @@ int findKey(string str, int* add)
 string findSequence(string s, int tipo, int lineaI, int lineaF)
 {
     string polinomio = " ";
-    cout<<lineaI<<", "<<lineaF<<endl;
+    if (tipo > 0)
+    {
+        cout<<lineaI<<", "<<lineaF<<endl;
+    }
     switch(tipo)
     {
         case 1: //si es un while
@@ -220,14 +223,17 @@ void findPoli(string s, int linea, vector<string> vecComp)
         //in case there is a For flag will be 2
         else if (foundF != string::npos)
         {
-            pos = static_cast<int>(foundW);
+            pos = static_cast<int>(foundF);
             flag = 2;
+            lineaI = linea;
+
+            // lineaF = analisisCorchetes(lineaI, vecComp);
             break;
         }
         //in case there is an "if" flag will be set 3
         else if (foundI != string::npos)
         {
-            pos = static_cast<int>(foundW);
+            pos = static_cast<int>(foundI);
             flag = 3;
             break;
         }
@@ -275,7 +281,7 @@ void analisisPrueba(queue<string> lineasComp){
         //checks if said operator is in line    
         cont1 += findChar(analize);
         
-        //tries to make the polynom
+        //tries to make the polynomial
         findPoli(analize, i, vecComp);
 
         //checks thre length of the largest line        
