@@ -1,4 +1,4 @@
-// La sentencia while es la que estaremos utilizando 
+// La sentencia es la que estaremos utilizando 
 #include <iostream>
 
 using namespace std;
