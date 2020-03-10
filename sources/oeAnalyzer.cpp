@@ -146,7 +146,7 @@ int findChar(string s)
     }
     return count;
 }
-
+//Checks if A function exists in the file
 void findPoli(string s)
 {
     string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
