@@ -8,10 +8,14 @@
 
 using namespace std;
 
-
+/* findKey: this method founds the elemental Operations in each line
+* Note: It won't count the keywords specified
+* @param string contains the line of the anlyzed code
+* @return int which contains the number of elemental operations 
+*/
 int findKey(string str, int* add)
 {
-    string kw[]={"int", "char", "string", "double", "bool", "long", "float", "class"};  //TODO: check cout and return
+    string kw[]={"int", "char", "string", "double", "bool", "long", "float", "class"}; //keywords that won't be counted
     vector<string> keywords(kw, kw + sizeof(kw) / sizeof(*kw)); 
     size_t found;
     int pos;
