@@ -177,12 +177,13 @@ int analisisCorchetes(int lineaI, vector<string> vecComp){
         string read = vecComp.at(i);
 
         //empieza a sumar corchetes
-        if(read.find("{")){
+        if(read.find("{") != string::npos){
             corch++;
         }
-        else if(read.find("}")){
+        else if(read.find("}") != string::npos){
             corch--;
         }
+        cout << "corchetes " << corch << endl;
         if(corch==0 && i!=lineaI){
             return i;
         }
@@ -199,9 +200,9 @@ void findPoli(string s, int linea, vector<string> vecComp)
     int flag = 0;
     int count = 0;
     int pos;
-    int lineaF, lineaI;
+    int lineaF, lineaI = 0;
     string poli= " ";
-    for (int i = 0; i < functions.size(); ++i)
+    for (int i = 1; i <= functions.size(); ++i)
     {
         foundF = s.find(functions[0]);
         foundW = s.find(functions[1]);
@@ -212,6 +213,7 @@ void findPoli(string s, int linea, vector<string> vecComp)
             pos = static_cast<int>(foundW);
             flag = 1;
             lineaI = linea;
+            
             lineaF = analisisCorchetes(lineaI, vecComp);
             break;
         }
@@ -234,7 +236,7 @@ void findPoli(string s, int linea, vector<string> vecComp)
             flag=-1;
         }
     }
-     poli = findSequence(s, flag, lineaI, lineaF);
+    poli = findSequence(s, flag, lineaI, lineaF);
 }
 
 
@@ -274,7 +276,7 @@ void analisisPrueba(queue<string> lineasComp){
         cont1 += findChar(analize);
         
         //tries to make the polynom
-            findPoli(analize, i, vecComp);
+        findPoli(analize, i, vecComp);
 
         //checks thre length of the largest line        
         if(analize.size()> mayor)

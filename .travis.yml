@@ -2,5 +2,5 @@ compiler: gcc
 language: cpp
 script: 
     - cd sources
-    - g++ main.cpp -std=c++17
+    - g++ simplificacion.cpp -std=c++17
     - ./a.out 
