@@ -4,20 +4,20 @@
 #include <iostream>
 using namespace std;
 
+
+
 int main()
 {
-    string line;
-    ifstream myfile;
-
+    string line; //lineas que va jalando del archivo
     ofstream myOfile;
-    myOfile.open ("polinomio.txt");
-    myOfile << "(3*n-1)*(3*n +1)";
-    myOfile.close();
+    ifstream myfile; //input file 
+    myOfile.open ("polinomio.txt"); // hace el archivo y lo abre
+    myOfile<<"(3*n-1)*(3*n +1)"<<endl; // escribe esto 
+    myOfile.close(); // cierra el documento 
 
-    string cadena = "python prueba.py ";
-
-    system("pip install sympy");
-    system("python prueba.py");
+    system("sudo apt-get update");
+    system("sudo apt install python3-pip3");
+    system("pipinstall --user sympy"); // instalación py
  
     myfile.open ("file.txt");
     if (myfile.is_open())
