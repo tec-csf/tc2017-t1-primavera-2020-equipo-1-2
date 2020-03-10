@@ -30,14 +30,16 @@ int findKey(string str, int* add)
     }
     return -1;
 }
-string findSequence(string s, int tipo, int lineaI, int lineaF)
+string findSequence(string s, int tipo, int lineaI, int lineaF, vector<string> vecComp)
 {
     string polinomio = " ";
     switch(tipo)
     {
         case 1: //si es un while
-            polinomio = "n+1";
-            cout<<lineaI<<", "<<lineaF<<endl;
+            //vecComp.at(11) =
+            for(int i=12; i<17; ++i){
+
+            }
         case 2: //si es un for
             
         case 3: //si es un if
@@ -238,7 +240,7 @@ void findPoli(string s, int linea, vector<string> vecComp)
             flag=-1;
         }
     }
-    poli = findSequence(s, flag, lineaI, lineaF);
+    poli = findSequence(s, flag, lineaI, lineaF, vecComp);
 }
 
 
