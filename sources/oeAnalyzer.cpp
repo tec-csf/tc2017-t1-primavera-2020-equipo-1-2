@@ -31,15 +31,14 @@ int findKey(string str, int* add)
     }
     return -1;
 }
-string findSequence(string s, int tipo, int lineaI, int lineaF, vector<string> vecComp)
+string findSequence(/*string s,*/int tipo, int lineaI, int lineaF, vector<string> vecComp)
 {
     string polinomio = " ";
     switch(tipo)
     {
         case 1: //si es un while
-            //vecComp.at(11) =
-            for(int i=12; i<17; ++i){
-
+            for(int i=lineaI; i<=lineaF; i++){
+                return "*n";
             }
         case 2: //si es un for
             
@@ -194,7 +193,7 @@ int analisisCorchetes(int lineaI, vector<string> vecComp){
 }
 
 //Checks if A function exists in the file
-void findPoli(string s, int linea, vector<string> vecComp)
+string findPoli(string s, int linea, vector<string> vecComp)
 {
     string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
     vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
@@ -215,7 +214,6 @@ void findPoli(string s, int linea, vector<string> vecComp)
             pos = static_cast<int>(foundW);
             flag = 1;
             lineaI = linea;
-            
             lineaF = analisisCorchetes(lineaI, vecComp);
             break;
         }
@@ -241,7 +239,7 @@ void findPoli(string s, int linea, vector<string> vecComp)
             flag=-1;
         }
     }
-    poli = findSequence(s, flag, lineaI, lineaF, vecComp);
+    return poli = findSequence(flag, lineaI, lineaF, vecComp);
 }
 
 
@@ -261,9 +259,11 @@ void analisisPrueba(queue<string> lineasComp){
 
     vector<string> vecComp; // for saving queue elements in a vector
     vector<int> contOE;//for saving elemental operations in each line
+    vector<string> vecPoli;
 
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
+    string hilo = " ";
 
     for(int i=0; i<cont; i++){
         vecComp.push_back(lineasComp.front()); //saves line in queue before being deleted
@@ -281,7 +281,7 @@ void analisisPrueba(queue<string> lineasComp){
         cont1 += findChar(analize);
         
         //tries to make the polynomial
-        findPoli(analize, i, vecComp);
+        hilo = findPoli(analize, i, vecComp); //tengo que poner un int para igualarlo, y al final sumarlo
 
         //checks thre length of the largest line        
         if(analize.size()> mayor)
@@ -290,9 +290,10 @@ void analisisPrueba(queue<string> lineasComp){
         }
     
         contOE.push_back(cont1); //saves elemental operation count in the line
+        vecPoli.push_back(to_string(cont1)+hilo);
+        cout<<vecPoli.at(i)<<endl;
     }
 
-
     PrintTable(vecComp, contOE, mayor);
-
+    
 }

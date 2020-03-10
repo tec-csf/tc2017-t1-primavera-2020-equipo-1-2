@@ -51,6 +51,6 @@ int simplificacion()
 {
     
     instalar();
-    simplificar("(3*n-1)*(3*n +1)");
+    simplificar("(3*n**2-1)*(3*n**2+1)");
    
 }
