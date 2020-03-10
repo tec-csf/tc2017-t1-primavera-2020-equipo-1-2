@@ -12,6 +12,20 @@ void instalar()
     system("pip install --user sympy");
 
 }
+void busqueda(string s)
+{
+    for (int i = 0; i< s.size(); i++)
+    {
+        if(s.at(i) == '*')
+        {
+            if (s.at(i+1)== '*')
+            {
+                s.replace(i,i+1,"^");
+            }
+        }
+    }
+    cout<<s<<endl;
+}
 int main()
 {
     string line; //lineas que va jalando del archivo
@@ -29,8 +43,9 @@ int main()
     {
         while ( getline(myfile,line) )
         {
-        cout <<"hello"<<endl;
-        cout << line << '\n';
+            cout << line << '\n';
+            busqueda(line);
+            
         }
         myfile.close();
     }
