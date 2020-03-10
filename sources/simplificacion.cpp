@@ -12,7 +12,7 @@ void instalar()
     system("pip install --user sympy");
 
 }
-void busqueda(string s)
+string busqueda(string s)
 {
     for (int i = 0; i< s.size(); i++)
     {
@@ -20,11 +20,11 @@ void busqueda(string s)
         {
             if (s.at(i+1)== '*')
             {
-                s.replace(i,1,"^");
+                s.replace(i,2,"^");
             }
         }
     }
-    cout<<s<<endl;
+    return s;
 }
 int main()
 {
