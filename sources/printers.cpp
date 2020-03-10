@@ -3,6 +3,12 @@
 #include <stdio.h>
 #include <iomanip>
 
+/* printTable: this method prints the lines of code
+number of elemental operations and number of lines in the specified format
+* @param VecComp containes the code analyzed, contOE has the number of elemental operations in each line
+and maxLinea is the size of the longest line 
+* @return void (prints table)
+*/
 void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea)
 {
     int cont = vecComp.size();
@@ -24,6 +30,8 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea)
     cout << "Complejidad: O("<<"aquí va el mayor de poliniomio"<<")"<<endl;
 }
 
+
+/*
 void impresionMetodos(vector<int> contOE){
 
     int count = contOE.size();
@@ -40,6 +48,7 @@ void printArray(vector<int> a)
         cout << a[i] << endl;
     }
 }
+*/
 
 
 

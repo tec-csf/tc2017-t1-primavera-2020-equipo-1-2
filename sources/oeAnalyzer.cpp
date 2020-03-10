@@ -8,10 +8,14 @@
 
 using namespace std;
 
-
+/* findKey: this method finds the kewords of each line 
+* Note: It won't count the keywords specified in the vector keywords
+* @param string contains the line of the anlyzed code
+* @return pos it returns the position of the keyword
+*/
 int findKey(string str, int* add)
 {
-    string kw[]={"int", "char", "string", "double", "bool", "long", "float", "class"};  //TODO: check cout and return
+    string kw[]={"int", "char", "string", "double", "bool", "long", "float", "class"}; //keywords that won't be counted
     vector<string> keywords(kw, kw + sizeof(kw) / sizeof(*kw)); 
     size_t found;
     int pos;
@@ -41,7 +45,11 @@ string findSequence(string s, int tipo, int lineaI, int lineaF)
     }
     return "hola";
 }
-//Checks if char x is in string s and how many times
+/* findChar: this method finds the elemental Operations in each line
+* Note: It won't count the keywords specified
+* @param string contains the line of the anlyzed code
+* @return int which contains the number of elemental operations 
+*/
 int findChar(string s)
 {
     int count = 0;
@@ -230,8 +238,10 @@ void findPoli(string s, int linea, vector<string> vecComp)
 }
 
 
-
-//analyzes file lines for elemental operations and certain keywords
+/* analisisPrueba: this method iterates over the lines of code 
+* @param queue that containes the file to be analyze 
+* @return void
+*/
 void analisisPrueba(queue<string> lineasComp){
 
     char op[]={'#', '/', '+', '-', '*', '=', '[', '<', '>'};  //TODO: check cout and return

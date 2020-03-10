@@ -2,5 +2,5 @@ compiler: gcc
 language: cpp
 script: 
     - cd sources
-    - g++ -o tarea1 Tarea1.cpp printers.cpp oeAnalyzer.cpp -std=c++17
-    - ./tarea1 -i ../examples/ciclos.cpp
+    - g++ main.cpp -std=c++17
+    - ./a.out 
