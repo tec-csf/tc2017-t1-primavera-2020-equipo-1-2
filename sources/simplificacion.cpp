@@ -26,7 +26,7 @@ string busqueda(string s)
     }
     return s;
 }
-string simplifica()
+int simplifica()
 {
     string line; //lineas que va jalando del archivo
     ofstream myOfile;
@@ -50,5 +50,5 @@ string simplifica()
         myfile.close();
     }
     myfile.close();
-    return line;
+    
 }
