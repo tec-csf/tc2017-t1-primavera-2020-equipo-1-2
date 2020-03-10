@@ -13,6 +13,7 @@ int main()
     {
         cout<< i <<endl;
         i--;
+        //if
     }
     
     return 0;

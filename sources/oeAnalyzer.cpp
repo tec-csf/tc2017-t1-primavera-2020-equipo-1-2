@@ -148,26 +148,38 @@ void findPoli(string s)
 {
     string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
     vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
-    size_t found;
+    size_t foundW , foundF, foundI;
     int flag = 0;
     int count = 0;
     int pos;
     for (int i = 0; i < functions.size(); ++i)
     {
-        found = s.find(functions[i]);
-        if (found != string::npos)
+        foundW = s.find("while");
+        foundF = s.find("for");
+        foundI = s.find("if");
+        if (foundW != string::npos)
         {
-            pos = static_cast<int>(found);
+            pos = static_cast<int>(foundW);
             flag = 1;
+            break;
+        }
+        else if (foundF != string::npos)
+        {
+            pos = static_cast<int>(foundW);
+            flag = 2;
+            break;
+        }
+        else if (foundI != string::npos)
+        {
+            pos = static_cast<int>(foundW);
+            flag = 3;
             break;
         }
         else
         {
             flag=-1;
         }
-    }
-    cout << flag << endl;
-    
+    }    
 }
 
 
