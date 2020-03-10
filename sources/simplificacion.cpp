@@ -29,6 +29,7 @@ int main()
     {
         while ( getline(myfile,line) )
         {
+        cout <<"hello"<<endl;
         cout << line << '\n';
         }
         myfile.close();
