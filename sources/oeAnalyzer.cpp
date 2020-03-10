@@ -34,7 +34,7 @@ string findSequence(string s, int tipo)
 {
     return "hola";
 }
-/* findChar: this method founds the elemental Operations in each line
+/* findChar: this method finds the elemental Operations in each line
 * Note: It won't count the keywords specified
 * @param string contains the line of the anlyzed code
 * @return int which contains the number of elemental operations 
@@ -155,6 +155,10 @@ int findChar(string s)
     return count;
 }
 //Checks if A function exists in the file
+/* findPoli:
+* @param 
+* @return 
+*/
 void findPoli(string s)
 {
     string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
@@ -199,8 +203,11 @@ void findPoli(string s)
 }
 
 
-
-//analyzes file lines for elemental operations and certain keywords
+/* analisisPrueba: this method founds the elemental Operations in each line
+* Note: It won't count the keywords specified
+* @param string contains the line of the anlyzed code
+* @return int which contains the number of elemental operations 
+*/
 void analisisPrueba(queue<string> lineasComp){
 
     char op[]={'#', '/', '+', '-', '*', '=', '[', '<', '>'};  //TODO: check cout and return
