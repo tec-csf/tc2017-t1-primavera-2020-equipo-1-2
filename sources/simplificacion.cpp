@@ -5,7 +5,13 @@
 using namespace std;
 
 
+void instalar()
+{
+    system("sudo apt-get update");
+    system("sudo apt install python3-pip3");
+    system("pip install --user sympy");
 
+}
 int main()
 {
     string line; //lineas que va jalando del archivo
@@ -14,11 +20,9 @@ int main()
     myOfile.open ("polinomio.txt"); // hace el archivo y lo abre
     myOfile<<"(3*n-1)*(3*n +1)"<<endl; // escribe esto 
     myOfile.close(); // cierra el documento 
+    instalar();
 
-    system("sudo apt-get update");
-    system("sudo apt install python3-pip3");
-    system("pip install --user sympy"); // instalación py
-    system("python hello.py");
+    system("python simply.py");
  
     myfile.open ("file.txt");
     if (myfile.is_open())
