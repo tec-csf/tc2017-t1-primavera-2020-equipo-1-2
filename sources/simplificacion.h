@@ -11,7 +11,7 @@ using namespace std;
 
 string busqueda(string s);
 
-void simplificar(string escPoli)
+void simplificar(string escPoli);
 
 void simplificacion();
 
