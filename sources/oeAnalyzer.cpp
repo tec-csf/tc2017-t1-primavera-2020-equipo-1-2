@@ -26,7 +26,10 @@ int findKey(string str, int* add)
     }
     return -1;
 }
-
+string findSequence(string s, int tipo)
+{
+    return "hola";
+}
 //Checks if char x is in string s and how many times
 int findChar(string s)
 {
@@ -152,23 +155,27 @@ void findPoli(string s)
     int flag = 0;
     int count = 0;
     int pos;
+    string poli= " ";
     for (int i = 0; i < functions.size(); ++i)
     {
-        foundW = s.find("while");
-        foundF = s.find("for");
-        foundI = s.find("if");
-        if (foundW != string::npos)
+        foundF = s.find(functions[0]);
+        foundW = s.find(functions[1]);
+        foundI = s.find(functions[2]);
+        //in case there is a while flag will be 1
+        if (foundW != string::npos) 
         {
             pos = static_cast<int>(foundW);
             flag = 1;
             break;
         }
+        //in case there is a For flag will be 2
         else if (foundF != string::npos)
         {
             pos = static_cast<int>(foundW);
             flag = 2;
             break;
         }
+        //in case there is an "if" flag will be set 3
         else if (foundI != string::npos)
         {
             pos = static_cast<int>(foundW);
@@ -179,8 +186,10 @@ void findPoli(string s)
         {
             flag=-1;
         }
-    }    
+    }
+     poli = findSequence(s,flag);
 }
+
 
 
 //analyzes file lines for elemental operations and certain keywords
