@@ -33,14 +33,11 @@ int findKey(string str, int* add)
 string findSequence(string s, int tipo, int lineaI, int lineaF)
 {
     string polinomio = " ";
-    if (tipo > 0)
-    {
-        cout<<lineaI<<", "<<lineaF<<endl;
-    }
     switch(tipo)
     {
         case 1: //si es un while
             polinomio = "n+1";
+            cout<<lineaI<<", "<<lineaF<<endl;
         case 2: //si es un for
             
         case 3: //si es un if
@@ -186,7 +183,6 @@ int analisisCorchetes(int lineaI, vector<string> vecComp){
         else if(read.find("}") != string::npos){
             corch--;
         }
-        cout << "corchetes " << corch << endl;
         if(corch==0 && i!=lineaI){
             return i;
         }
