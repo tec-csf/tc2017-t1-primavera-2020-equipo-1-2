@@ -32,7 +32,7 @@ int main()
     ofstream myOfile;
     ifstream myfile; //input file 
     myOfile.open ("polinomio.txt"); // hace el archivo y lo abre de python
-    myOfile<<"(3*n-1)*(3*n +1)"<<endl; // escribe esto 
+    myOfile<<"(3*n-1)+(3*n +1)"<<endl; // escribe esto 
     myOfile.close(); // cierra el documento 
     instalar();
 
