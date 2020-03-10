@@ -10,7 +10,7 @@ def expPolinomio (polynom):
     n = symbols('n')
     return(expand(polynom))
 #saves the function return in a string form
-valor = str(polinomio(simpli))
+valor = str(expPolinomio(simpli))
 #creates de file so, it opens in c++
 arch = open ('listo.txt','w')
 arch.write(valor)

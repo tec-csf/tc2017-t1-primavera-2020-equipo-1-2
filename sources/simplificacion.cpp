@@ -17,14 +17,14 @@ int main()
     string line; //lineas que va jalando del archivo
     ofstream myOfile;
     ifstream myfile; //input file 
-    myOfile.open ("polinomio.txt"); // hace el archivo y lo abre
+    myOfile.open ("polinomio.txt"); // hace el archivo y lo abre de python
     myOfile<<"(3*n-1)*(3*n +1)"<<endl; // escribe esto 
     myOfile.close(); // cierra el documento 
     instalar();
 
     system("python simply.py");
  
-    myfile.open ("file.txt");
+    myfile.open ("listo.txt");
     if (myfile.is_open())
     {
         while ( getline(myfile,line) )
