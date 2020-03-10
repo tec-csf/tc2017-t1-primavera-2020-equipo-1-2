@@ -26,8 +26,19 @@ int findKey(string str, int* add)
     }
     return -1;
 }
-string findSequence(string s, int tipo)
+string findSequence(string s, int tipo, int lineaI, int lineaF)
 {
+    string polinomio = " ";
+    cout<<lineaI<<", "<<lineaF<<endl;
+    switch(tipo)
+    {
+        case 1: //si es un while
+            polinomio = "n+1";
+        case 2: //si es un for
+            
+        case 3: //si es un if
+        ;
+    }
     return "hola";
 }
 //Checks if char x is in string s and how many times
@@ -146,8 +157,33 @@ int findChar(string s)
     }
     return count;
 }
+
+int analisisCorchetes(int lineaI, vector<string> vecComp){
+    int corch=0;
+    int cont = vecComp.size(); 
+    int cont1;
+    for(int i=lineaI; i<cont; i++){
+        cont1 = 0;
+
+        //nos da la linea a prtir de la primera posición
+        string read = vecComp.at(i);
+
+        //empieza a sumar corchetes
+        if(read.find("{")){
+            corch++;
+        }
+        else if(read.find("}")){
+            corch--;
+        }
+        if(corch==0 && i!=lineaI){
+            return i;
+        }
+    }
+    return -1;
+}
+
 //Checks if A function exists in the file
-void findPoli(string s)
+void findPoli(string s, int linea, vector<string> vecComp)
 {
     string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
     vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
@@ -155,6 +191,7 @@ void findPoli(string s)
     int flag = 0;
     int count = 0;
     int pos;
+    int lineaF, lineaI;
     string poli= " ";
     for (int i = 0; i < functions.size(); ++i)
     {
@@ -166,6 +203,8 @@ void findPoli(string s)
         {
             pos = static_cast<int>(foundW);
             flag = 1;
+            lineaI = linea;
+            lineaF = analisisCorchetes(lineaI, vecComp);
             break;
         }
         //in case there is a For flag will be 2
@@ -187,7 +226,7 @@ void findPoli(string s)
             flag=-1;
         }
     }
-     poli = findSequence(s,flag);
+     poli = findSequence(s, flag, lineaI, lineaF);
 }
 
 
@@ -205,24 +244,27 @@ void analisisPrueba(queue<string> lineasComp){
 
     vector<string> vecComp; // for saving queue elements in a vector
     vector<int> contOE;//for saving elemental operations in each line
-    bool ignore;
 
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
 
+    for(int i=0; i<cont; i++){
+        vecComp.push_back(lineasComp.front()); //saves line in queue before being deleted
+        lineasComp.pop(); //removes line from queue
+    }
+
     for (int i = 0; i < cont; i++) //iterates over each line
     {
-        ignore = false;
         cont1 = 0;
 
         //saves line as string
-        string analize = lineasComp.front();
+        string analize = vecComp.at(i);
 
         //checks if said operator is in line    
         cont1 += findChar(analize);
         
         //tries to make the polynom
-            findPoli(analize);
+            findPoli(analize, i, vecComp);
 
         //checks thre length of the largest line        
         if(analize.size()> mayor)
@@ -231,9 +273,6 @@ void analisisPrueba(queue<string> lineasComp){
         }
     
         contOE.push_back(cont1); //saves elemental operation count in the line
-        
-        vecComp.push_back(lineasComp.front()); //saves line in queue before being deleted
-        lineasComp.pop(); //removes line from queue
     }
 
 
