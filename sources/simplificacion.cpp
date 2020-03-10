@@ -26,13 +26,13 @@ string busqueda(string s)
     }
     return s;
 }
-void simplificar()
+void simplificar(string escPoli)
 {
     string line; //lineas que va jalando del archivo
     ofstream myOfile;
     ifstream myfile; //input file 
     myOfile.open ("polinomio.txt"); // hace el archivo y lo abre de python
-    myOfile<<"(3*n-1)*(3*n +1)"<<endl; // escribe esto 
+    myOfile<< escPoli <<endl; // escribe esto 
     myOfile.close(); // cierra el documento 
     system("python simply.py");
  
@@ -54,6 +54,6 @@ int main()
 {
     
     instalar();
-    simplificar();
+    simplificar("(3*n-1)*(3*n +1)");
    
 }
