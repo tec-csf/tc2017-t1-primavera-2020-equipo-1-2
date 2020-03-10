@@ -8,10 +8,10 @@
 
 using namespace std;
 
-/* findKey: this method founds the elemental Operations in each line
-* Note: It won't count the keywords specified
+/* findKey: this method finds the kewords of each line 
+* Note: It won't count the keywords specified in the vector keywords
 * @param string contains the line of the anlyzed code
-* @return int which contains the number of elemental operations 
+* @return pos it returns the position of the keyword
 */
 int findKey(string str, int* add)
 {
@@ -34,7 +34,11 @@ string findSequence(string s, int tipo)
 {
     return "hola";
 }
-//Checks if char x is in string s and how many times
+/* findChar: this method founds the elemental Operations in each line
+* Note: It won't count the keywords specified
+* @param string contains the line of the anlyzed code
+* @return int which contains the number of elemental operations 
+*/
 int findChar(string s)
 {
     int count = 0;
