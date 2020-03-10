@@ -44,7 +44,8 @@ int main()
         while ( getline(myfile,line) )
         {
             cout << line << '\n';
-            busqueda(line);
+            cout<<busqueda(line)<<endl;
+
             
         }
         myfile.close();
