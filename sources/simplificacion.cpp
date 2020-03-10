@@ -20,7 +20,7 @@ void busqueda(string s)
         {
             if (s.at(i+1)== '*')
             {
-                s.replace(i,i+1,"^");
+                s.replace(i,1,"^");
             }
         }
     }
