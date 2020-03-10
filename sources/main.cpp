@@ -17,7 +17,7 @@ int main()
 
     system("sudo apt-get update");
     system("sudo apt install python3-pip3");
-    system("pipinstall --user sympy"); // instalación py
+    system("pip install --user sympy"); // instalación py
  
     myfile.open ("file.txt");
     if (myfile.is_open())
