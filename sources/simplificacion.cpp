@@ -1,7 +1,4 @@
-#include <stdlib.h>
-#include <string>
-#include <fstream>
-#include <iostream>
+#include "simplificacion.h"
 using namespace std;
 
 
@@ -50,7 +47,7 @@ void simplificar(string escPoli)
     myfile.close();
 
 }
-int main()
+int simplificacion()
 {
     
     instalar();

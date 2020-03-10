@@ -1,5 +1,6 @@
 #include "oeAnalyzer.h"
 #include "printers.h"
+#include "simplificacion.h"
 #include <iostream>
 #include <stdio.h>
 #include <fstream>
