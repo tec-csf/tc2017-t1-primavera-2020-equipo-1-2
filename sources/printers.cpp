@@ -28,7 +28,7 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector
     }
 
     cout << "---------------------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "Polinimio: T(n)= "<<endl;
+    cout << "Polinimio: T(n)= 3n+1"<<endl;
     cout << "Complejidad: O("<<"aquí va el mayor de poliniomio"<<")"<<endl;
 }
 

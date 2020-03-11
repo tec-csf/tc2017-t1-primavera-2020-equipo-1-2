@@ -292,6 +292,7 @@ void analisisPrueba(queue<string> lineasComp){
         for(int i=vr; i<linea; i++){ //lee de la primera linea que tiene una función a la última
             hilo = findSequence(analize, cont1);
         }
+        cout<<vr<<", "<<linea<<endl;
 
         //checks thre length of the largest line        
         if(analize.size()> mayor)
