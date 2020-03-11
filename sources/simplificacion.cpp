@@ -13,19 +13,16 @@ string busqueda(string s)
 {
     for (int i = 0; i< s.size(); i++)
     {
-        if(s.at(i) == '*')
+        if(s.at(i) == '*' && s.at(i+1)== '*')
         {
-            if (s.at(i+1)== '*')
-            {
-                s.replace(i,2,"^");
-            }
+            s.replace(i,2,"^");
         }
     }
     return s;
 }
-void simplificar(string escPoli)
+void simplificar(string escPoli, int* cota)
 {
-    string line; //lineas que va jalando del archivo
+    string line, lineSimp; //lineas que va jalando del archivo
     ofstream myOfile;
     ifstream myfile; //input file 
     myOfile.open ("polinomio.txt"); // hace el archivo y lo abre de python
@@ -39,7 +36,9 @@ void simplificar(string escPoli)
         while ( getline(myfile,line) )
         {
             //cout << line << '\n';
-            cout<<busqueda(line)<<endl;
+            lineSimp = busqueda(line);
+            cout<< lineSimp <<endl;
+            *cota = bigO(lineSimp);
             line = busqueda(line);
         }
         myfile.close();
@@ -47,6 +46,24 @@ void simplificar(string escPoli)
     myfile.close();
 
 }
+
+int bigO(string line)
+{
+    int max = 1;
+    for (int i = 0; i < line.size(); ++i)
+    {
+        if (line[i] == '^')
+        {
+            if (line[i+1] >= max)
+            {
+                max = line[i+1];
+            }
+        }
+    }
+    cout << max;
+    return max;
+}
+
 void simplificacion()
 {
     instalar();

@@ -13,6 +13,7 @@ and maxLinea is the size of the longest line
 void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector<string> poli)
 {
     int cont = vecComp.size();
+    int bigO;
 
     //table formatting
     cout <<setfill(' ') << setw(0) << "No. de linea|" << setfill(' ') << setw((maxLinea+6)/2) << "Código";
@@ -36,9 +37,9 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector
     }
     poliSt += "("+poli.at(poli.size()-1)+")";
     cout << "Polinimio: T(n)= ";
-    simplificar(poliSt);
+    simplificar(poliSt, &bigO);
     cout <<endl;
-    cout << "Complejidad: O("<<"aquí va el mayor de poliniomio"<<")"<<endl;
+    cout << "Complejidad: O(n^"<<bigO<<")"<<endl;
 }
 
 
