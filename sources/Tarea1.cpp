@@ -6,6 +6,7 @@
  */
 #include "oeAnalyzer.h"
 #include "printers.h"
+#include "simplificacion.h"
 #include <stdio.h>
 #include <fstream>
 #include <vector>
