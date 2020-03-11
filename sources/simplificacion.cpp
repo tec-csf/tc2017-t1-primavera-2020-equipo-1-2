@@ -78,6 +78,6 @@ int bigO(string line)
             }
         }
     }
-    cout << max;
+    //cout << max;
     return max;
 }
