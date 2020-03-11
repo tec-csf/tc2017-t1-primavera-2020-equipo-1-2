@@ -1,16 +1,16 @@
 #include "simplificacion.h"
 using namespace std;
 /*
-* Instalar before doing anything, it will install python in order to use sympy
+* simplificacion before doing anything, it will install python in order to use sympy
 * @param none
 * @return void 
 */
-void instalar()
+void simplificacion()
 {
     system("sudo apt-get update");
     system("sudo apt install python3-pip3");
     system("pip install --user sympy");
-
+       
 }
 /*
 * Busqueda it checks the text from python to change the exponent notation
@@ -61,9 +61,9 @@ void simplificar(string escPoli, int* cota)
 
 }
 /*
-* bigO it checks the text from python to change the exponent notation
-* @param string that is read
-* @return string but with the exponent notation of c++
+* bigO Obtains the highest power of the polynomial 
+* @param string containing polynomial 
+* @return int with the mex power
 */
 int bigO(string line)
 {
@@ -80,10 +80,4 @@ int bigO(string line)
     }
     cout << max;
     return max;
-}
-
-void simplificacion()
-{
-    instalar();
-       
 }
