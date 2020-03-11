@@ -195,7 +195,7 @@ int analisisCorchetes(int lineaI, vector<string> vecComp){
 }
 
 //Checks if A function exists in the file
-void findPoli(string s, int linea, vector<string> vecComp, vector <string> vecPoli, int cont1)
+int findPoli(string s, int linea, vector<string> vecComp, /*vector <string> vecPoli,*/ int cont1)
 {
     string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
     vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
@@ -203,7 +203,7 @@ void findPoli(string s, int linea, vector<string> vecComp, vector <string> vecPo
     int flag = 0;
     int count = 0;
     int pos;
-    int lineaF, lineaI = 0;
+    int lineaF = 0;
     string poli= " ";
     for (int i = 1; i <= functions.size(); ++i)
     {
@@ -215,8 +215,8 @@ void findPoli(string s, int linea, vector<string> vecComp, vector <string> vecPo
         {
             pos = static_cast<int>(foundW);
             flag = 1;
-            lineaI = linea;
-            lineaF = analisisCorchetes(lineaI, vecComp);
+            //lineaI = linea;
+            lineaF = analisisCorchetes(linea, vecComp);
             break;
         }
         //in case there is a For flag will be 2
@@ -224,7 +224,7 @@ void findPoli(string s, int linea, vector<string> vecComp, vector <string> vecPo
         {
             pos = static_cast<int>(foundF);
             flag = 2;
-            lineaI = linea;
+            //lineaI = linea;
 
             // lineaF = analisisCorchetes(lineaI, vecComp);
             break;
@@ -241,7 +241,8 @@ void findPoli(string s, int linea, vector<string> vecComp, vector <string> vecPo
             flag=-1;
         }
     }
-    findSequence(s, flag, lineaI, lineaF, cont1);
+    //findSequence(s, flag, lineaI, lineaF, cont1);
+    return lineaF;
 }
 
 
@@ -265,6 +266,7 @@ void analisisPrueba(queue<string> lineasComp){
 
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
+    int linea = 0;
     //string hilo = " ";
 
     for(int i=0; i<cont; i++){
@@ -283,7 +285,7 @@ void analisisPrueba(queue<string> lineasComp){
         cont1 += findChar(analize);
         
         //tries to make the polynomial
-        findPoli(analize, i, vecComp, vecPoli, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
+        linea = findPoli(analize, i, vecComp, /*vecPoli, */cont1); //tengo que poner un int para igualarlo, y al final sumarlo
 
         //checks thre length of the largest line        
         if(analize.size()> mayor)
