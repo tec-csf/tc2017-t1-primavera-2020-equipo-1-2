@@ -9,6 +9,7 @@
 
 using namespace std;
 int vr;
+int lineaF;
 
 /* findKey: this method finds the kewords of each line 
 * Note: It won't count the keywords specified in the vector keywords
@@ -197,7 +198,7 @@ int analisisCorchetes(int lineaI, vector<string> vecComp){
 }
 
 //Checks if A function exists in the file
-int findPoli(string s, int linea, vector<string> vecComp, int cont1)
+void findPoli(string s, int linea, vector<string> vecComp, int cont1)
 {
     string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
     vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
@@ -205,7 +206,6 @@ int findPoli(string s, int linea, vector<string> vecComp, int cont1)
     int flag = 0;
     int count = 0;
     int pos;
-    int lineaF = 0;
     string poli= " ";
     for (int i = 1; i <= functions.size(); ++i)
     {
@@ -245,7 +245,6 @@ int findPoli(string s, int linea, vector<string> vecComp, int cont1)
         }
     }
     //findSequence(s, flag, lineaI, lineaF, cont1);
-    return lineaF;
 }
 
 
@@ -269,7 +268,6 @@ void analisisPrueba(queue<string> lineasComp){
 
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
-    int linea = 0;
     string hilo = " ";
 
     for(int i=0; i<cont; i++){
@@ -288,9 +286,12 @@ void analisisPrueba(queue<string> lineasComp){
         cont1 += findChar(analize);
         
         //tries to make the polynomial
-        linea = findPoli(analize, i, vecComp, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
-        for(int i=vr; i<linea; i++){ //lee de la primera linea que tiene una función a la última
+        findPoli(analize, i, vecComp, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
+        for(int i=vr; i<lineaF; i++){ //lee de la primera linea que tiene una función a la última
             hilo = findSequence(analize, cont1);
+        }
+        if(lineaF == -1){
+            hilo = " ";
         }
 
         //checks thre length of the largest line        
