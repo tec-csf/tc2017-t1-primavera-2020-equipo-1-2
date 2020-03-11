@@ -8,7 +8,6 @@
 #include <queue>
 
 using namespace std;
-vector<string> vecPoli;
 int vr;
 
 /* findKey: this method finds the kewords of each line 
@@ -33,11 +32,15 @@ int findKey(string str, int* add)
     }
     return -1;
 }
-void findSequence(string s, int tipo, int lineaI, int lineaF, int cont1)
+void findSequence(string s, /*int tipo, int lineaI, int lineaF, */int cont1, vector<string> vecPoli)
 {
-    cout<<tipo<<endl;
+    //cout<<tipo<<endl;
     string polinomio = " ";
-    switch(tipo)
+    vecPoli.push_back(to_string(cont1)+"*n");
+    for(int i=0; i<vecPoli.size(); i++){
+        cout<<vecPoli.at(i)<<endl;
+    }
+    /*switch(tipo)
     {
         case 1: //si es un while
             for(int i=lineaI; i<=lineaF; i++){
@@ -48,7 +51,7 @@ void findSequence(string s, int tipo, int lineaI, int lineaF, int cont1)
             
         case 3: //si es un if
         ;
-    }
+    }*/
 }
 /* findChar: this method finds the elemental Operations in each line
 * Note: It won't count the keywords specified
@@ -216,7 +219,7 @@ int findPoli(string s, int linea, vector<string> vecComp, int cont1)
         {
             pos = static_cast<int>(foundW);
             flag = 1;
-            vr = linea;
+            vr = linea; //guarda la linea en una variable universal
             lineaF = analisisCorchetes(linea, vecComp);
             break;
         }
@@ -225,7 +228,8 @@ int findPoli(string s, int linea, vector<string> vecComp, int cont1)
         {
             pos = static_cast<int>(foundF);
             flag = 2;
-            // lineaF = analisisCorchetes(lineaI, vecComp);
+            vr = linea; //guarda la linea en una variable universal
+            lineaF = analisisCorchetes(linea, vecComp);
             break;
         }
         //in case there is an "if" flag will be set 3
@@ -233,6 +237,8 @@ int findPoli(string s, int linea, vector<string> vecComp, int cont1)
         {
             pos = static_cast<int>(foundI);
             flag = 3;
+            vr = linea; //guarda la linea en una variable universal
+            lineaF = analisisCorchetes(linea, vecComp);
             break;
         }
         else
@@ -261,7 +267,6 @@ void analisisPrueba(queue<string> lineasComp){
 
     vector<string> vecComp; // for saving queue elements in a vector
     vector<int> contOE;//for saving elemental operations in each line
-    vector<string> vecPoli;
 
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
@@ -284,8 +289,9 @@ void analisisPrueba(queue<string> lineasComp){
         
         //tries to make the polynomial
         linea = findPoli(analize, i, vecComp, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
-        for(int i=vr; i<linea; i++){
-            cout<<"yay"<<endl;
+        for(int i=vr; i<linea; i++){ //lee de la primera linea que tiene una función a la última
+            vector<string> vecPoli;
+            findSequence(analize, cont1, vecPoli);
         }
 
         //checks thre length of the largest line        
@@ -295,7 +301,6 @@ void analisisPrueba(queue<string> lineasComp){
         }
     
         contOE.push_back(cont1); //saves elemental operation count in the line
-        //cout<<vecPoli.at(i)<<endl;
     }
 
     PrintTable(vecComp, contOE, mayor);
