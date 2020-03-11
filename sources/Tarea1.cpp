@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
 {
     string op[] = {"+", "-", "++", "--", "=", "[]"};
     string func[] = {"for", "if", "while"};
-    simplificacion();
+    instalar();
 
     queue<string> lineasComp;
     fstream inputFile;               //file to read
