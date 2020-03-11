@@ -78,7 +78,7 @@ El código se encuentra documentado con la finalidad que cualquier persona que l
 #### Para correr el programa
 1. Mediante la terminal, navegar a la carpeta sources
 2. Correr el comando: `g++ -o tarea1 Tarea1.cpp printers.cpp oeAnalyzer.cpp simplificacion.cpp -std=c++17`
-3. Correr el comando: `./tarea1 -i *ruta del archivo a analizar*`
+3. Correr el comando: `./tarea1 -i ../ruta del archivo a analizar`
 ## 3. Referencias
 >http://www.cplusplus.com/reference/
 
