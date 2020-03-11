@@ -31,36 +31,19 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector
 
     cout << "---------------------------------------------------------------------------------------------------------------------------------------" << endl;
     string poliSt = " ";
+
+    //iterates and sums all polynomials
     for(int i=0; i<poli.size()-1; ++i){
         poliSt += "("+poli.at(i)+")+";
         
     }
     poliSt += "("+poli.at(poli.size()-1)+")";
     cout << "Polinimio: T(n)= ";
+
+    //simplifies resulting polynomial
     simplificar(poliSt, &bigO);
     cout <<endl;
     cout << "Complejidad: O(n^"<<bigO<<")"<<endl;
 }
-
-
-/*
-void impresionMetodos(vector<int> contOE){
-
-    int count = contOE.size();
-
-    cout << count<< "\t"; 
-    cout << contOE[count-1] << endl; //prints last element in vector
-
-}
-
-void printArray(vector<int> a)
-{
-    for (int i = 0; i < a.size(); ++i)
-    {
-        cout << a[i] << endl;
-    }
-}
-*/
-
 
 
