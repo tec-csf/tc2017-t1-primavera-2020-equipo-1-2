@@ -36,7 +36,7 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector
     }
     poliSt += "("+poli.at(poli.size()-1)+")";
     cout << "Polinimio: T(n)= ";
-    //simplificar(poliSt);
+    simplificar(poliSt);
     cout <<endl;
     cout << "Complejidad: O("<<"aquí va el mayor de poliniomio"<<")"<<endl;
 }
