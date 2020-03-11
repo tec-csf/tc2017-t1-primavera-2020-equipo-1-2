@@ -66,5 +66,6 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 cplusplusreference.com
 https://es.cppreference.com/w/cpp/container/vector
 https://es.cppreference.com/w/cpp/container/queue
-
+https://docs.python.org/2/extending/extending.html
+https://scipy-lectures.org/packages/sympy.html
 
