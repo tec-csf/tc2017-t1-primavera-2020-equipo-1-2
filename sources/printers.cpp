@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <iomanip>
+#include "simplificacion.h"
 
 /* printTable: this method prints the lines of code
 number of elemental operations and number of lines in the specified format
@@ -28,7 +29,13 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector
     }
 
     cout << "---------------------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "Polinimio: T(n)= 3n+1"<<endl;
+    string poliSt = " ";
+    for(int i=0; i<poli.size(); ++i){
+        poliSt += poli.at(i);
+    }
+    cout << "Polinimio: T(n)= ";
+    simplificar(poliSt);
+    cout <<endl;
     cout << "Complejidad: O("<<"aquí va el mayor de poliniomio"<<")"<<endl;
 }
 

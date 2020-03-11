@@ -43,7 +43,7 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 Para mejorar la manera en la que construímos el código y sus funciones principales, decidimos implementar el uso de headers (__.h__) y tener las funciones que se llevarían a cabo en otros documentos de _C++_ (__.cpp__).
 Para que nuestro programa funcionara de manera correcta y fuera mas flexible con los códigos introducidos, utilizamos programación genérica para que no hubiera errores.
 
-Las funciones que consisten en el análisis del documento, ingresar las líneas individuales del código ya separadas, obtener la cantidad de operaciones elementales y el cálculo de la cuota asintótica, se están llevando a cabo en los siguientes documentos:
+Las funciones que consisten en el análisis del documento, ingresar las líneas individuales del código ya separadas, obtener la cantidad de operaciones elementales y el cálculo de la cota asintótica, se están llevando a cabo en los siguientes documentos:
 * [Tarea1.cpp](sources/Tarea1.cpp)
 * [simplificacion.cpp](sources/simplificacion.cpp)
 * [oeAnalyzer.cpp](sources/oeAnalyzer.cpp)
