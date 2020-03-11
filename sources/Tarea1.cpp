@@ -6,6 +6,7 @@
  */
 #include "oeAnalyzer.h"
 #include "printers.h"
+#include "simplificacion.h"
 #include <stdio.h>
 #include <fstream>
 #include <vector>
@@ -23,7 +24,7 @@ int main(int argc, char const *argv[])
 {
     string op[] = {"+", "-", "++", "--", "=", "[]"};
     string func[] = {"for", "if", "while"};
-    //simplificacion();
+    simplificacion();
 
     queue<string> lineasComp;
     fstream inputFile;               //file to read

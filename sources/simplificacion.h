@@ -9,10 +9,12 @@
 
 using namespace std;
 
+void simplificacion();
+
 string busqueda(string s);
 
 void simplificar(string escPoli);
 
-void simplificacion();
+
 
 #endif
