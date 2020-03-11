@@ -63,5 +63,8 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 3. Correr el comando './tarea1 -i *ruta del archivo a analizar*'
 
 ## 3. Referencias
-
 cplusplusreference.com
+https://es.cppreference.com/w/cpp/container/vector
+https://es.cppreference.com/w/cpp/container/queue
+
+
