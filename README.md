@@ -42,18 +42,18 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 
 Para mejorar la manera en la que construímos el código y sus funciones principales, decidimos implementar el uso de headers (__.h__) y tener las funciones que se llevarían a cabo en otros documentos de _C++_ (__.cpp__).
 
-* Las funciones que consisten en el análisis del documento, ingresar las líneas individuales del código ya separadas, obtener la cantidad de operaciones elementales y el cálculo de la cuota asintótica, se están llevando a cabo en los siguientes documentos:
+Las funciones que consisten en el análisis del documento, ingresar las líneas individuales del código ya separadas, obtener la cantidad de operaciones elementales y el cálculo de la cuota asintótica, se están llevando a cabo en los siguientes documentos:
 * [Tarea1.cpp](sources/Tarea1.cpp)
 * [simplificacion.cpp](sources/simplificacion.cpp)
 * [oeAnalyzer.cpp](sources/oeAnalyzer.cpp)
-* [printers.cpp](sources/printers.cpp).
+* [printers.cpp](sources/printers.cpp)
 
 Para que funcione todo en conjunto, cada método esta mandando a llamar a una función correspondiente que se encuentra en el header correspondiente. Estos, llaman a los métodos dentro de sus __.cpp__ respectivo. Los headers utilizados son:
 * [oeAnalyzer.h](sources/oeAnalyzer.h)
 * [printers.h](sources/printers.h)
 * [simplificacion.h](sources/simplificacion.h)
 
-Además de los documentos _.cpp_, tenemos un  corren script de Python que se encarga de resolver los polinomios obtenidos por los scripts de C++. El script que usamos puede ser visto en:
+Además de los documentos _.cpp_, tenemos un  corren script de Python 3 que se encarga de resolver los polinomios obtenidos por los scripts de C++. El script que usamos puede ser visto en:
 * [simply.py](sources/simply.py)
 
 El código se encuentra documentado con la finalidad que cualquier persona que lo este leyendo, entienda la manera en la que los métodos están construidos. La documentación de este mismo fue hecho de acuerdo a los parámetros establecidos por el estándar de **C++17**.
@@ -76,9 +76,8 @@ El código se encuentra documentado con la finalidad que cualquier persona que l
 
 #### Para correr el programa
 1. Mediante la terminal, navegar a la carpeta sources
-2. Correr el comando 'g++ -o tarea1 Tarea1.cpp printers.cpp oeAnalyzer.cpp'
-3. Correr el comando './tarea1 -i *ruta del archivo a analizar*'
-
+2. Correr el comando: `g++ -o tarea1 Tarea1.cpp printers.cpp oeAnalyzer.cpp simplificacion.cpp -std=c++17`
+3. Correr el comando: `./tarea1 -i *ruta del archivo a analizar*`
 ## 3. Referencias
 >cplusplusreference.com 
 
