@@ -9,7 +9,7 @@ void simplificacion()
 {
     system("sudo apt-get update");
     system("sudo apt install python-pip");
-    system("pip install --upgrade pip");
+    system("pip install --user --upgrade pip");
     system("pip install --user sympy");
        
 }
