@@ -32,14 +32,13 @@ int findKey(string str, int* add)
     }
     return -1;
 }
-void findSequence(string s, /*int tipo, int lineaI, int lineaF, */int cont1, vector<string> vecPoli)
+
+string findSequence(string s, /*int tipo, int lineaI, int lineaF, */int cont1)
 {
     //cout<<tipo<<endl;
     string polinomio = " ";
-    vecPoli.push_back(to_string(cont1)+"*n");
-    for(int i=0; i<vecPoli.size(); i++){
-        cout<<vecPoli.at(i)<<endl;
-    }
+    polinomio = "*n";
+    return polinomio;
     /*switch(tipo)
     {
         case 1: //si es un while
@@ -267,10 +266,12 @@ void analisisPrueba(queue<string> lineasComp){
 
     vector<string> vecComp; // for saving queue elements in a vector
     vector<int> contOE;//for saving elemental operations in each line
+    vector<string> poli;
 
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
     int linea = 0;
+    string hilo = " ";
 
     for(int i=0; i<cont; i++){
         vecComp.push_back(lineasComp.front()); //saves line in queue before being deleted
@@ -290,8 +291,7 @@ void analisisPrueba(queue<string> lineasComp){
         //tries to make the polynomial
         linea = findPoli(analize, i, vecComp, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
         for(int i=vr; i<linea; i++){ //lee de la primera linea que tiene una función a la última
-            vector<string> vecPoli;
-            findSequence(analize, cont1, vecPoli);
+            hilo = findSequence(analize, cont1);
         }
 
         //checks thre length of the largest line        
@@ -301,6 +301,8 @@ void analisisPrueba(queue<string> lineasComp){
         }
     
         contOE.push_back(cont1); //saves elemental operation count in the line
+        poli.push_back(to_string(cont1)+hilo);
+        cout<<poli.at(i)<<endl;
     }
 
     PrintTable(vecComp, contOE, mayor);
