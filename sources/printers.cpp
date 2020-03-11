@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <iomanip>
-#include <simplificacion.h>
+#include "simplificacion.h"
 
 /* printTable: this method prints the lines of code
 number of elemental operations and number of lines in the specified format
