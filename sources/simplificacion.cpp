@@ -1,7 +1,11 @@
 #include "simplificacion.h"
 using namespace std;
 
-
+/*
+* Instalar before doing anything, it will install python in order to use sympy
+* @param none
+* @return void 
+*/
 void instalar()
 {
     system("sudo apt-get update");
