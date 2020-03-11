@@ -26,7 +26,7 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector
     {
         cout <<setfill(' ') << setw(6) << i + 1 <<setfill(' ') << setw(7)<< "|" 
         << setfill(' ') << setw(maxLinea+10) << vecComp.at(i) <<"|"<< setfill(' ') << setw(4) << contOE.at(i);
-        cout<< setfill(' ') << setw(2) <<"|"<< setfill(' ') << setw(8)<< poli.at(i) <<endl;
+        cout<< setfill(' ') << setw(2) <<"|"<< setfill(' ') << setw(20)<< poli.at(i) <<endl;
     }
 
     cout << "---------------------------------------------------------------------------------------------------------------------------------------" << endl;
