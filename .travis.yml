@@ -3,4 +3,4 @@ language: cpp
 script: 
     - cd sources
     - g++ -o tarea1 Tarea1.cpp printers.cpp oeAnalyzer.cpp simplificacion.cpp -std=c++17
-    - ./tarea1 -i ../examples/ciclos.cpp
+    - ./tarea1 -i ../examples/fors.cpp
