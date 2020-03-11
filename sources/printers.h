@@ -9,7 +9,7 @@ using namespace std;
 
 void printArray(vector<int> a);
 
-void PrintTable(vector<string> lineasComp, vector<int> contadorOE, int maxLinea);
+void PrintTable(vector<string> lineasComp, vector<int> contadorOE, int maxLinea, vector <string> poli);
 
 void impresionMetodos(vector<int> contOE);
 

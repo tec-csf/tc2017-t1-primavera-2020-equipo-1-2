@@ -9,7 +9,7 @@ number of elemental operations and number of lines in the specified format
 and maxLinea is the size of the longest line 
 * @return void (prints table)
 */
-void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea)
+void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector<string> poli)
 {
     int cont = vecComp.size();
 
@@ -24,7 +24,7 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea)
     {
         cout <<setfill(' ') << setw(6) << i + 1 <<setfill(' ') << setw(7)<< "|" 
         << setfill(' ') << setw(maxLinea+10) << vecComp.at(i) <<"|"<< setfill(' ') << setw(4) << contOE.at(i);
-        cout<< setfill(' ') << setw(2) <<"|"<< endl;
+        cout<< setfill(' ') << setw(2) <<"|"<< setfill(' ') << setw(8)<< poli.at(i) <<endl;
     }
 
     cout << "---------------------------------------------------------------------------------------------------------------------------------------" << endl;

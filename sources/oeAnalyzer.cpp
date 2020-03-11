@@ -32,7 +32,6 @@ int findKey(string str, int* add)
     }
     return -1;
 }
-
 string findSequence(string s, /*int tipo, int lineaI, int lineaF, */int cont1)
 {
     //cout<<tipo<<endl;
@@ -302,9 +301,8 @@ void analisisPrueba(queue<string> lineasComp){
     
         contOE.push_back(cont1); //saves elemental operation count in the line
         poli.push_back(to_string(cont1)+hilo);
-        cout<<poli.at(i)<<endl;
     }
 
-    PrintTable(vecComp, contOE, mayor);
+    PrintTable(vecComp, contOE, mayor, poli);
     
 }
