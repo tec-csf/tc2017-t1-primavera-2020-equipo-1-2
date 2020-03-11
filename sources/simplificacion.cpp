@@ -6,7 +6,7 @@ void instalar()
 {
     system("sudo apt-get update");
     system("sudo apt install python3-pip3");
-    system("pip install --user sympy");
+    system("pip3 install --user sympy");
 
 }
 string busqueda(string s)
@@ -50,5 +50,6 @@ void simplificar(string escPoli)
 void simplificacion()
 {
     instalar();
+    simplificar("(3*n**2-1)*(3*n**2+1)");
    
 }
