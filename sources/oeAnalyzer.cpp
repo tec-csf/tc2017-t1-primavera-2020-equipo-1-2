@@ -291,7 +291,6 @@ void analisisPrueba(queue<string> lineasComp){
         linea = findPoli(analize, i, vecComp, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
         for(int i=vr; i<linea; i++){ //lee de la primera linea que tiene una función a la última
             hilo = findSequence(analize, cont1);
-            cout<<vr<<", "<<linea<<endl;
         }
 
         //checks thre length of the largest line        
