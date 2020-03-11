@@ -9,6 +9,10 @@
 
 using namespace std;
 int vr;
+int lineaF;
+string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
+vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
+size_t foundW , foundF, foundI;
 
 /* findKey: this method finds the kewords of each line 
 * Note: It won't count the keywords specified in the vector keywords
@@ -32,24 +36,11 @@ int findKey(string str, int* add)
     }
     return -1;
 }
-string findSequence(string s, /*int tipo, int lineaI, int lineaF, */int cont1)
+string findSequence(string s, int cont1)
 {
-    //cout<<tipo<<endl;
     string polinomio = " ";
     polinomio = "*n";
     return polinomio;
-    /*switch(tipo)
-    {
-        case 1: //si es un while
-            for(int i=lineaI; i<=lineaF; i++){
-                //vecPoli[i]+= "*n"; 
-                //vecPoli.push_back(to_string(cont1)+"*n");
-            }
-        case 2: //si es un for
-            
-        case 3: //si es un if
-        ;
-    }*/
 }
 /* findChar: this method finds the elemental Operations in each line
 * Note: It won't count the keywords specified
@@ -197,16 +188,8 @@ int analisisCorchetes(int lineaI, vector<string> vecComp){
 }
 
 //Checks if A function exists in the file
-int findPoli(string s, int linea, vector<string> vecComp, int cont1)
+void findPoli(string s, int linea, vector<string> vecComp, int cont1)
 {
-    string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
-    vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
-    size_t foundW , foundF, foundI;
-    int flag = 0;
-    int count = 0;
-    int pos;
-    int lineaF = 0;
-    string poli= " ";
     for (int i = 1; i <= functions.size(); ++i)
     {
         foundF = s.find(functions[0]);
@@ -215,8 +198,6 @@ int findPoli(string s, int linea, vector<string> vecComp, int cont1)
         //in case there is a while flag will be 1
         if (foundW != string::npos) 
         {
-            pos = static_cast<int>(foundW);
-            flag = 1;
             vr = linea; //guarda la linea en una variable universal
             lineaF = analisisCorchetes(linea, vecComp);
             break;
@@ -224,8 +205,6 @@ int findPoli(string s, int linea, vector<string> vecComp, int cont1)
         //in case there is a For flag will be 2
         else if (foundF != string::npos)
         {
-            pos = static_cast<int>(foundF);
-            flag = 2;
             vr = linea; //guarda la linea en una variable universal
             lineaF = analisisCorchetes(linea, vecComp);
             break;
@@ -233,19 +212,12 @@ int findPoli(string s, int linea, vector<string> vecComp, int cont1)
         //in case there is an "if" flag will be set 3
         else if (foundI != string::npos)
         {
-            pos = static_cast<int>(foundI);
-            flag = 3;
             vr = linea; //guarda la linea en una variable universal
             lineaF = analisisCorchetes(linea, vecComp);
             break;
         }
-        else
-        {
-            flag=-1;
-        }
     }
     //findSequence(s, flag, lineaI, lineaF, cont1);
-    return lineaF;
 }
 
 
@@ -269,7 +241,6 @@ void analisisPrueba(queue<string> lineasComp){
 
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
-    int linea = 0;
     string hilo = " ";
 
     for(int i=0; i<cont; i++){
@@ -288,9 +259,12 @@ void analisisPrueba(queue<string> lineasComp){
         cont1 += findChar(analize);
         
         //tries to make the polynomial
-        linea = findPoli(analize, i, vecComp, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
-        for(int i=vr; i<linea; i++){ //lee de la primera linea que tiene una función a la última
+        findPoli(analize, i, vecComp, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
+        for(int i=vr; i<lineaF; i++){ //lee de la primera linea que tiene una función a la última
             hilo = findSequence(analize, cont1);
+        }
+        if(lineaF == -1){
+            hilo = " ";
         }
 
         //checks thre length of the largest line        
