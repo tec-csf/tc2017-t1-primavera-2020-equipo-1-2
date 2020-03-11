@@ -72,7 +72,7 @@ El código se encuentra documentado con la finalidad que cualquier persona que l
 #### Para clonar el repositorio
 1. Crear una carpeta en la que se vaya a clonar el repositorio
 2. Mediante la terminal, navegar a dicha carpeta
-3. Correr el comando 'git clone https://github.com/tec-csf/tc2017-t1-primavera-2020-equipo-1-2.git'
+3. Correr el comando `git clone https://github.com/tec-csf/tc2017-t1-primavera-2020-equipo-1-2.git`
 
 #### Para correr el programa
 1. Mediante la terminal, navegar a la carpeta sources
