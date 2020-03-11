@@ -1,6 +1,5 @@
 #include "simplificacion.h"
 using namespace std;
-
 /*
 * Instalar before doing anything, it will install python in order to use sympy
 * @param none
@@ -13,6 +12,11 @@ void instalar()
     system("pip install --user sympy");
 
 }
+/*
+* Busqueda it checks the text from python to change the exponent notation
+* @param string that is read
+* @return string but with the exponent notation of c++
+*/
 string busqueda(string s)
 {
     for (int i = 0; i< s.size(); i++)
