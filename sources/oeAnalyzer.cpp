@@ -8,7 +8,7 @@
 #include <queue>
 
 using namespace std;
-int vr;
+int vr, flag;
 int lineaF;
 string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
 vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
@@ -200,6 +200,7 @@ void findPoli(string s, int linea, vector<string> vecComp, int cont1)
         {
             vr = linea; //guarda la linea en una variable universal
             lineaF = analisisCorchetes(linea, vecComp);
+            flag = 1;
             break;
         }
         //in case there is a For flag will be 2
@@ -207,6 +208,7 @@ void findPoli(string s, int linea, vector<string> vecComp, int cont1)
         {
             vr = linea; //guarda la linea en una variable universal
             lineaF = analisisCorchetes(linea, vecComp);
+            flag = 2;
             break;
         }
         //in case there is an "if" flag will be set 3
@@ -214,10 +216,11 @@ void findPoli(string s, int linea, vector<string> vecComp, int cont1)
         {
             vr = linea; //guarda la linea en una variable universal
             lineaF = analisisCorchetes(linea, vecComp);
+            flag = 3;
             break;
         }
+        flag = -1;
     }
-    //findSequence(s, flag, lineaI, lineaF, cont1);
 }
 
 
@@ -229,10 +232,10 @@ void analisisPrueba(queue<string> lineasComp){
 
     char op[]={'#', '/', '+', '-', '*', '=', '[', '<', '>'};  //TODO: check cout and return
     vector<char> vectorOP(op, op + sizeof(op) / sizeof(*op));    
-    string funcFor[]={"for","while"};
+    /*string funcFor[]={"for","while"};
     vector<string>vectorFN(funcFor,funcFor + sizeof(funcFor)/sizeof(*funcFor));
     string funcIf[]={"if"};
-    vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));
+    vector<string>vectorFUN(funcIf,funcIf + sizeof(funcIf)/sizeof(*funcIf));*/
                 
 
     vector<string> vecComp; // for saving queue elements in a vector

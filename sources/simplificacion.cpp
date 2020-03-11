@@ -38,7 +38,7 @@ void simplificar(string escPoli)
     {
         while ( getline(myfile,line) )
         {
-            cout << line << '\n';
+            //cout << line << '\n';
             cout<<busqueda(line)<<endl;
             line = busqueda(line);
         }
