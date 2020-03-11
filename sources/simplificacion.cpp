@@ -8,7 +8,8 @@ using namespace std;
 void simplificacion()
 {
     system("sudo apt-get update");
-    system("sudo apt install python3-pip3");
+    system("sudo apt install python-pip");
+    system("pip install --upgrade pip");
     system("pip install --user sympy");
        
 }
