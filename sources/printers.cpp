@@ -30,10 +30,11 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector
 
     cout << "---------------------------------------------------------------------------------------------------------------------------------------" << endl;
     string poliSt = " ";
-    for(int i=0; i<poli.size(); ++i){
+    for(int i=0; i<poli.size()-1; ++i){
         poliSt += "("+poli.at(i)+")+";
         
     }
+    poliSt += "("+poli.at(poli.size()-1)+")";
     cout << "Polinimio: T(n)= ";
     simplificar(poliSt);
     cout <<endl;
