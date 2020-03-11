@@ -9,6 +9,7 @@
 
 using namespace std;
 vector<string> vecPoli;
+
 /* findKey: this method finds the kewords of each line 
 * Note: It won't count the keywords specified in the vector keywords
 * @param string contains the line of the anlyzed code
