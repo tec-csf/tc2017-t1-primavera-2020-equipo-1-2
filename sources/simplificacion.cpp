@@ -5,7 +5,7 @@ using namespace std;
 void instalar()
 {
     system("sudo apt-get update");
-    system("sudo apt install python3-pip3");
+    system("sudo apt install python3-pip");
     system("pip3 install --user sympy");
 
 }
@@ -31,7 +31,7 @@ void simplificar(string escPoli)
     myOfile.open ("polinomio.txt"); // hace el archivo y lo abre de python
     myOfile<< escPoli <<endl; // escribe esto 
     myOfile.close(); // cierra el documento 
-    system("python simply.py");
+    system("python3 simply.py");
  
     myfile.open ("listo.txt");
     if (myfile.is_open())
