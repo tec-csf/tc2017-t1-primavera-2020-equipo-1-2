@@ -9,6 +9,7 @@
 
 using namespace std;
 vector<string> vecPoli;
+int vr;
 
 /* findKey: this method finds the kewords of each line 
 * Note: It won't count the keywords specified in the vector keywords
@@ -195,7 +196,7 @@ int analisisCorchetes(int lineaI, vector<string> vecComp){
 }
 
 //Checks if A function exists in the file
-int findPoli(string s, int linea, vector<string> vecComp, /*vector <string> vecPoli,*/ int cont1)
+int findPoli(string s, int linea, vector<string> vecComp, int cont1)
 {
     string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
     vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
@@ -215,7 +216,7 @@ int findPoli(string s, int linea, vector<string> vecComp, /*vector <string> vecP
         {
             pos = static_cast<int>(foundW);
             flag = 1;
-            //lineaI = linea;
+            vr = linea;
             lineaF = analisisCorchetes(linea, vecComp);
             break;
         }
@@ -224,8 +225,6 @@ int findPoli(string s, int linea, vector<string> vecComp, /*vector <string> vecP
         {
             pos = static_cast<int>(foundF);
             flag = 2;
-            //lineaI = linea;
-
             // lineaF = analisisCorchetes(lineaI, vecComp);
             break;
         }
@@ -267,7 +266,6 @@ void analisisPrueba(queue<string> lineasComp){
     int cont = lineasComp.size(); 
     int cont1 , mayor = 0;
     int linea = 0;
-    //string hilo = " ";
 
     for(int i=0; i<cont; i++){
         vecComp.push_back(lineasComp.front()); //saves line in queue before being deleted
@@ -285,7 +283,10 @@ void analisisPrueba(queue<string> lineasComp){
         cont1 += findChar(analize);
         
         //tries to make the polynomial
-        linea = findPoli(analize, i, vecComp, /*vecPoli, */cont1); //tengo que poner un int para igualarlo, y al final sumarlo
+        linea = findPoli(analize, i, vecComp, cont1); //tengo que poner un int para igualarlo, y al final sumarlo
+        for(int i=vr; i<linea; i++){
+            cout<<"yay"<<endl;
+        }
 
         //checks thre length of the largest line        
         if(analize.size()> mayor)
