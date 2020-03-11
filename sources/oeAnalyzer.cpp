@@ -8,10 +8,10 @@
 #include <queue>
 
 using namespace std;
-int vr, flag;
-int lineaF;
+int vr, flag; //saves first line of while, for and if 
+int lineaF; //saves last line of while, for and if
 string Pf[]={"for", "while", "if"};  //TODO: check cout and return Possible Functions
-vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); 
+vector<string> functions(Pf, Pf + sizeof(Pf) / sizeof(*Pf)); //turns Pf into vector
 size_t foundW , foundF, foundI;
 
 /* findKey: this method finds the kewords of each line 
@@ -36,6 +36,10 @@ int findKey(string str, int* add)
     }
     return -1;
 }
+/* findSequence: this method gets the times a function is repeated
+* @param string contains the line of the anlyzed code
+* @return polinomio it returns the polinomial string of the function
+*/
 string findSequence(string s, int cont1)
 {
     string polinomio = " ";
@@ -162,7 +166,11 @@ int findChar(string s)
     }
     return count;
 }
-
+/* findChar: this method finds how many lines are between a while, if or for method
+* Note: It starts reading on the line with the function
+* @param int gives us the first line to analize
+* @return int which contains the number of the last line inside the function
+*/
 int analisisCorchetes(int lineaI, vector<string> vecComp){
     int corch=0;
     int cont = vecComp.size(); 
@@ -186,8 +194,11 @@ int analisisCorchetes(int lineaI, vector<string> vecComp){
     }
     return -1;
 }
-
-//Checks if A function exists in the file
+/* findPoli: this method checks if a function exists in the file
+* Note: Gives us different values of flag for the different functions
+* @param string contains the line of the analyzed code, int gives us the line to analyze
+* @return void
+*/
 void findPoli(string s, int linea, vector<string> vecComp, int cont1)
 {
     for (int i = 1; i <= functions.size(); ++i)
@@ -222,8 +233,6 @@ void findPoli(string s, int linea, vector<string> vecComp, int cont1)
         flag = -1;
     }
 }
-
-
 /* analisisPrueba: this method iterates over the lines of code 
 * @param queue that containes the file to be analyze 
 * @return void
