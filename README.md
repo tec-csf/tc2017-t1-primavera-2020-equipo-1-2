@@ -79,7 +79,7 @@ El código se encuentra documentado con la finalidad que cualquier persona que l
 2. Correr el comando: `g++ -o tarea1 Tarea1.cpp printers.cpp oeAnalyzer.cpp simplificacion.cpp -std=c++17`
 3. Correr el comando: `./tarea1 -i *ruta del archivo a analizar*`
 ## 3. Referencias
->cplusplusreference.com 
+>http://www.cplusplus.com/reference/
 
 >https://es.cppreference.com/w/cpp/container/vector
 
