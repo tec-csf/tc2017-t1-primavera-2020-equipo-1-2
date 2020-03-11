@@ -49,7 +49,6 @@ void simplificar(string escPoli)
 }
 int main()
 {
-    
     instalar();
     simplificar("(3*n**2-1)*(3*n**2+1)");
    
