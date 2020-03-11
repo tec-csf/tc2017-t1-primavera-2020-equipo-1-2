@@ -40,7 +40,24 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 
 ## 2. Solución
 
-*[Incluya aquí una explicación de la solución implementada]*
+Para mejorar la manera en la que construímos el código y sus funciones principales, decidimos implementar el uso de headers (__.h__) y tener las funciones que se llevarían a cabo en otros documentos de _C++_ (__.cpp__).
+
+* Las funciones que consisten en el análisis del documento, ingresar las líneas individuales del código ya separadas, obtener la cantidad de operaciones elementales y el cálculo de la cuota asintótica, se están llevando a cabo en los siguientes documentos:
+* [Tarea1.cpp](sources/Tarea1.cpp)
+* [simplificacion.cpp](sources/simplificacion.cpp)
+* [oeAnalyzer.cpp](sources/oeAnalyzer.cpp)
+* [printers.cpp](sources/printers.cpp).
+
+Para que funcione todo en conjunto, cada método esta mandando a llamar a una función correspondiente que se encuentra en el header correspondiente. Estos, llaman a los métodos dentro de sus __.cpp__ respectivo. Los headers utilizados son:
+* [oeAnalyzer.h](sources/oeAnalyzer.h)
+* [printers.h](sources/printers.h)
+* [simplificacion.h](sources/simplificacion.h)
+
+Además de los documentos _.cpp_, tenemos un  corren script de Python que se encarga de resolver los polinomios obtenidos por los scripts de C++. El script que usamos puede ser visto en:
+* [simply.py](sources/simply.py)
+
+El código se encuentra documentado con la finalidad que cualquier persona que lo este leyendo, entienda la manera en la que los métodos están construidos. La documentación de este mismo fue hecho de acuerdo a los parámetros establecidos por el estándar de **C++17**.
+
 
 ### 2.1 Pasos a seguir para utilizar la aplicación
 
@@ -63,9 +80,13 @@ El proyecto debe seguir la siguiente estructura de carpetas:
 3. Correr el comando './tarea1 -i *ruta del archivo a analizar*'
 
 ## 3. Referencias
-cplusplusreference.com 
-https://es.cppreference.com/w/cpp/container/vector
-https://es.cppreference.com/w/cpp/container/queue
-https://docs.python.org/2/extending/extending.html
-https://scipy-lectures.org/packages/sympy.html
+>cplusplusreference.com 
+
+>https://es.cppreference.com/w/cpp/container/vector
+
+>https://es.cppreference.com/w/cpp/container/queue
+
+>https://docs.python.org/2/extending/extending.html
+
+>https://scipy-lectures.org/packages/sympy.html
 
