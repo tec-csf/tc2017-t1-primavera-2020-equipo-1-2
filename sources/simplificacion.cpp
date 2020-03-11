@@ -28,6 +28,12 @@ string busqueda(string s)
     }
     return s;
 }
+/*
+* Simplificar it expands and solves the polynomial, in order to simplify the polynomial
+* @param string that will be expand in a python file
+* @param int *cota is a pointer to the bigO
+* @return void
+*/
 void simplificar(string escPoli, int* cota)
 {
     string line, lineSimp; //lineas que va jalando del archivo
@@ -54,7 +60,11 @@ void simplificar(string escPoli, int* cota)
     myfile.close();
 
 }
-
+/*
+* bigO it checks the text from python to change the exponent notation
+* @param string that is read
+* @return string but with the exponent notation of c++
+*/
 int bigO(string line)
 {
     int max = 1;
