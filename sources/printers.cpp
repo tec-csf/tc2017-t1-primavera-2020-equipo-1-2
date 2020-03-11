@@ -31,7 +31,7 @@ void PrintTable(vector<string> vecComp, vector<int> contOE, int maxLinea, vector
     cout << "---------------------------------------------------------------------------------------------------------------------------------------" << endl;
     string poliSt = " ";
     for(int i=0; i<poli.size(); ++i){
-        poliSt += poli.at(i)+"+";
+        poliSt += "("+poli.at(i)+")+";
         
     }
     cout << "Polinimio: T(n)= ";
