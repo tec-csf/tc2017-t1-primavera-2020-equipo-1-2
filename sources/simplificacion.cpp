@@ -47,7 +47,7 @@ void simplificar(string escPoli)
     myfile.close();
 
 }
-int simplificacion()
+int main()
 {
     
     instalar();
